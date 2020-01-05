@@ -56,7 +56,7 @@ function showdemo()
                     console.log(subject.timing.time_1.slot_1);
                     var template = '<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">\
                         <div class="card">\
-                            <div class="card-body">\
+                        <div class="card-body">\
                                 <p><h4 class="description"><b>' + subject.subject_name + '</b></h4></p><h5>Fees : Rs.'
                         subject.fees + '</h5>\
                         \
@@ -76,7 +76,7 @@ function showdemo()
                         </div>\
                         </div>\
                         </div>\
-                    </div>';
+                    </div></div>';
                     return template;
                 }
                
