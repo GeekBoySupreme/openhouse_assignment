@@ -60,7 +60,7 @@ function showdemo()
                     \
                         <div class="subject-details">\
                             <h4 class="description"><b>' +
-                    subject.subject_name + '</b></h4><br />\
+                    subject.subject_name + '</b></h4><br>\
                             <h5><b>' + subject.fees +
                     '<b></h5>\
                     \
@@ -116,6 +116,6 @@ function openCity(evt, day) {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(day).style.display = "block";
+    document.getElementById(day).style.display = "none";
     evt.currentTarget.className += " active";
   }
