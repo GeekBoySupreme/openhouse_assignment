@@ -51,6 +51,9 @@ function showdemo()
     
                 function getTemplate(subject) {
                     console.log(subject.subject_name);
+                    console.log(subject.fees);
+                    console.log(subject.timing.day_1);
+                    console.log(subject.timing.time_1.slot_1);
                     var template = '<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">\
                         <div class="card_subject">\
                             <div class="card-body">\
