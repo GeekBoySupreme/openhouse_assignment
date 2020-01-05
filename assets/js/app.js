@@ -60,7 +60,21 @@ function showdemo()
                                 <p><h5 class="description"><b>' + subject.subject_name + '</b></h5></p><h4>Fees : Rs.'
                         subject.fees + '</h4>\
                         \
-                           </div>\
+                        <button class="accordion">'+ subject.timing.day_1 +'</button>\
+                        <div class="panel">\
+                        <p>Lorem ipsum...</p>\
+                        </div>\
+\
+                        <button class="accordion">'+ subject.timing.day_2 +'</button>\
+                        <div class="panel">\
+                        <p>Lorem ipsum...</p>\
+                        </div>\
+\
+                        <button class="accordion">'+ subject.timing.day_3 +'</button>\
+                        <div class="panel">\
+                        <p>Lorem ipsum...</p>\
+                        </div>\
+                                                </div>\
                         </div>\
                     </div>';
                     return template;
