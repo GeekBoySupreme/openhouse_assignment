@@ -63,39 +63,16 @@ function showdemo()
                     </div>';
                     return template;
                 }
-                var cards = ''; 
-                var i=1;        
-                var temp = '' ;
-                var size = 0; //to check the size of the file
-                var html = '';
-
+               
                 var queryUrl='https://openhouseparent.netlify.com/subject_details.json';
 
     
+                var html = '';
                 $.getJSON(queryUrl, function (subjects) {
-                    subjects.forEach(function (){
-                        size += 1
-                    });
+                subjects.forEach(function (subject) {
+                    html += getTemplate(subject);
                 });
-                $.getJSON(queryUrl, function (subjects) {
-                    subjects.forEach(function (subject) {
-                        cards += getTemplate(subject);
-                        if(i%3 == 0){
-                            temp=
-                            '<div class="row equal mt-5 wow">' + cards + '</div>' ;
-                            cards = '';
-                        };
-                        html += temp;
-                        temp = '';
-                        if(i==size){
-                            html += '<div class="row equal mt-5 wow">' + cards + '</div>' ;
-                        };
-                        i += 1;
-                    });
-
-                    $('#container-subject').append(html);
-
-                
-                });
+                $('#container-subject').append(html);
+            });
         
 }
