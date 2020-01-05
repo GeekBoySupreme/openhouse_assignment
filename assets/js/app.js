@@ -82,8 +82,5 @@ function showdemo()
                     });
 
                     $('#container-subject').append(html);
-
-                
-                });
         
 }
