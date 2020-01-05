@@ -59,30 +59,24 @@ function showdemo()
                     <div class="clearfix float-my-children">\
                     \
                         <div class="subject-details">\
-                            <h4 class="description"><b>' +
-                    subject.subject_name + '</b></h4><br>\
-                            <h5><b>' + subject.fees +
+                            <h3 class="description"><b>' +
+                    subject.subject_name + '</b></h3>\
+                            <h5><b>Fees : Rs.' + subject.fees +
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>\
-                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>\
-                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>\
-                    </div>\
-\
-                    <div id="'+ subject.timing.day_1 +'" class="tabcontent1">\
-                    <h3>London</h3>\
-                    <p>London is the capital city of England.</p>\
-                    </div>\
-\
-                    <div id="'+ subject.timing.day_2 +'" class="tabcontent1">\
-                    <h3>Paris</h3>\
-                    <p>Paris is the capital of France.</p> \
-                    </div>\
-\
-                    <div id="'+ subject.timing.day_3 +'" class="tabcontent1">\
-                    <h3>Tokyo</h3>\
-                    <p>Tokyo is the capital of Japan.</p>\
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>\
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>\
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>\
+                    <div class="tabcontent1" id="' + subject.timing.day_1+ '">' +
+                    gettime(subject.timing.time_1)+
+                    '</div>\
+                    <div class="tabcontent1" id="' + subject.timing.day_2+ '">' +
+                    gettime(subject.timing.time_2)+
+                    '</div>\
+                    <div class="tabcontent1" id="' + subject.timing.day_3+ '">' +
+                    gettime(subject.timing.time_3)+
+                    '</div>\
                     </div>\
                         </div>\
                     </div>\
@@ -104,18 +98,22 @@ function showdemo()
 }
 
 
+function gettime(time)
+{
+    var code='';
+    for(var i=0; i<time.length; i++){
+        code +='<button class="btn btn-primary btn-round">'+ time[i] +'</button>';
+    }
+    return code;
+}
 
 //Controls opening of Tabs
-function openCity(evt, day) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent1");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "block";
+function showtime(value)
+{
+    tabcontent1 = document.getElementsByClassName("tabcontent1");
+    for (i = 0; i < tabcontent1.length; i++) {
+        tabcontent1[i].style.display = "none";
     }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(day).style.display = "none";
-    evt.currentTarget.className += " active";
-  }
+    
+    document.getElementById(value).style.display="block";
+}
