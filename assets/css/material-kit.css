@@ -2319,7 +2319,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .form-check-input:disabled~.form-check-label {
-    color: #6c757d;
+    color: #4b4a46;
 }
 
 .form-check-label {
@@ -2628,7 +2628,7 @@ select.form-control-lg:not([size]):not([multiple]),
     padding: 0.46875rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0.25rem;
+    border-radius: 0.30rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -2670,14 +2670,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    color: #ffffff;
+    color: #141414;
     background-color: #2196f3;
     border-color: #2196f3;
     box-shadow: none;
 }
 
 .btn-primary:hover {
-    color: #ffffff;
+    color: #242424;
     background-color: #0c83e2;
     border-color: #0c7cd5;
 }
@@ -2689,7 +2689,7 @@ fieldset:disabled a.btn {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-    color: #ffffff;
+    color: #0e0d0d;
     background-color: #2196f3;
     border-color: #2196f3;
 }
@@ -2697,7 +2697,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show>.btn-primary.dropdown-toggle {
-    color: #ffffff;
+    color: #050505;
     background-color: #0c7cd5;
     border-color: #0b75c9;
 }
@@ -3313,9 +3313,10 @@ fieldset:disabled a.btn {
 .btn-lg,
 .btn-group-lg>.btn {
     padding: 1.125rem 2.25rem;
-    font-size: 1.25rem;
+    font-size: 2.15rem;
     line-height: 1.5;
-    border-radius: 0.3rem;
+    border-radius: 50%;
+    width: 90%;
 }
 
 .btn-sm,
@@ -7170,8 +7171,7 @@ button.bg-dark:focus {
     bottom: -3px!important;
     left: 0;
     z-index: 1030;
-    background: #2c2c2c;
-    border-top:1px solid rgb(32, 32, 32);
+    
 }
 
 @supports (position: sticky) {
@@ -8880,34 +8880,34 @@ button:focus {
 }
 
 .btn.btn-primary {
-    color: #fff;
+    color: #000;
     background-color: #f7d986;
     border-color: #f7d986;
     box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
 
 .btn.btn-primary:hover {
-    color: #fff;
-    background-color: #9124a3;
+    color: #000;
+    background-color: #f7d986;
     border-color: #701c7e;
 }
 
 .btn.btn-primary:focus,
 .btn.btn-primary.focus,
 .btn.btn-primary:hover {
-    color: #fff;
-    background-color: #9124a3;
-    border-color: #701c7e;
+    color: #000;
+    background-color:  #f7d986;
+    border-color:  #f7d986;
 }
 
 .btn.btn-primary:active,
 .btn.btn-primary.active,
 .open>.btn.btn-primary.dropdown-toggle,
 .show>.btn.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #9124a3;
-    border-color: #701c7e;
-    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+    color: #000;
+    background-color:  #f7d986;
+    border-color:  #f7d986;
+    box-shadow: 0 2px 2px 0 rgba(255, 220, 105, 0.14), 0 3px 1px -2pxrgba(250, 211, 105, 0.2), 0 1px 5px 0 rgba(248, 216, 110, 0.12);
 }
 
 .btn.btn-primary:active:hover,
@@ -8923,7 +8923,7 @@ button:focus {
 .show>.btn.btn-primary.dropdown-toggle:focus,
 .show>.btn.btn-primary.dropdown-toggle.focus {
     color: #fff;
-    background-color: #9124a3;
+    background-color: #f7d986;
     border-color: #3f1048;
 }
 
@@ -8933,7 +8933,7 @@ button:focus {
 }
 
 .open>.btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover {
-    background-color: #9124a3;
+    background-color: #f7d986;
 }
 
 .btn.btn-primary.disabled:focus,
@@ -10942,7 +10942,7 @@ a .material-icons {
 
 .form-check,
 label {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.42857;
     color: #AAAAAA;
     font-weight: 400;
@@ -11903,7 +11903,7 @@ form {
     padding-left: 0;
     padding-right: 0;
     border-radius: 0;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .form-control:focus,
@@ -11915,19 +11915,19 @@ form {
 .form-control::-moz-placeholder {
     color: #AAAAAA;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .form-control:-ms-input-placeholder {
     color: #AAAAAA;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .form-control::-webkit-input-placeholder {
     color: #AAAAAA;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .has-white .form-control::-moz-placeholder {
@@ -14932,7 +14932,7 @@ h6,
 }
 
 p {
-    font-size: 14px;
+    font-size: 20px;
     margin: 0 0 10px;
 }
 
@@ -16281,7 +16281,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .togglebutton label input[type=checkbox]:checked+.toggle:active:after {
-    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(156, 39, 176, 0.1);
+    box-shadow: 0 1px 3px 1px rgba(252, 203, 111, 0.4), 0 0 0 15px rgba(252, 208, 113, 0.1);
 }
 
 .ripple {

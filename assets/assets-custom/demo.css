@@ -1,44 +1,13 @@
 /* ==========================================================================
 Header
 ========================================================================== */
-.icon_holder
+.header_container
 {
-    color: rgb(63, 118, 238);
-    background:transparent;
-    width:25%;
-    text-align:center;
-    font-weight:500;
-    font-size:30px;
-    transition:0.3s ease;
-    cursor: pointer;
-}
-
-.icon_holder:hover, .icon_holder:active{
-    color:rgb(250, 252, 251);
-}
-
-.active
-{
-    color:white;
+    width:100%;
+    height:50%;
 }
 
 
-#social_link
-{
-    color:rgb(52, 109, 241);
-}
-
-#social_button
-{
-    color:rgb(49, 118, 223);
-    font-size:22px;
-}
-
-#social_button1
-{
-    background:rgb(19, 101, 207);
-    font-size:22px;
-}
 
 .col-lg-2{
   padding:10px;
@@ -168,11 +137,11 @@ body {
 {
     font-family: 'Open Sans', sans-serif;
     margin-top:0px;
-    color:#3DDB86;
+    color:rgb(32, 30, 23);
 }
 .description
 {
-    color: rgb(228, 226, 226);
+    color: rgb(14, 13, 13);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -249,8 +218,20 @@ p{
     to {opacity: 1;}
   }
 
-body{
-    overflow-x: hidden;
+.tab { margin-left: 40px; }
+
+
+
+/* ==========================================================================
+Login Form Edits
+========================================================================== */
+
+form{
+    text-align:center;
 }
 
-.tab { margin-left: 40px; }
+#login_guide_text
+{
+    margin-top:50px;
+    margin-left:30px;
+}
