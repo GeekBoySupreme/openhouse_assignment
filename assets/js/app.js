@@ -65,15 +65,15 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>'+
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')"><b>'+ subject.timing.day_1 +'</b></button>'+
                     gettime(subject.timing.time_1)+
                     '</div>\
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>'+
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')"><b>'+ subject.timing.day_2 +'</b></button>'+
                     gettime(subject.timing.time_2)+
                     '</div>\
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>'+
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')"><b>'+ subject.timing.day_3 +'</b></button>'+
                     gettime(subject.timing.time_3)+
                     '</div>\
                         </div>\
