@@ -52,9 +52,9 @@ function showdemo()
                 function getTemplate(subject) {
     
                     var template = '<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">\
-                        <div class="card">\
-                            <h3 class="description>' + subject.subject_name +'</h3>\
+                        <div class="card_subject">\
                             <div class="card-body">\
+                            <h3 class="description>' + subject.subject_name +'</h3>\
                                 <h4 class="description">Fees : Rs.' +
                         subject.fees + '</h4>\
                         \
