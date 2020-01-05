@@ -65,19 +65,17 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>\
-                    <div class="tabcontent1" id="' + subject.timing.day_1+ '">' +
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>'+
                     gettime(subject.timing.time_1)+
                     '</div>\
-                    <div class="tabcontent1" id="' + subject.timing.day_2+ '">' +
+                    <div class="tab">\
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>'+
                     gettime(subject.timing.time_2)+
                     '</div>\
-                    <div class="tabcontent1" id="' + subject.timing.day_3+ '">' +
+                    <div class="tab">\
+                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>'+
                     gettime(subject.timing.time_3)+
                     '</div>\
-                    </div>\
                         </div>\
                     </div>\
                 </div>';
@@ -114,6 +112,6 @@ function showtime(value)
     for (i = 0; i < tabcontent1.length; i++) {
         tabcontent1[i].style.display = "none";
     }
-    
+
     document.getElementById(value).style.display="block";
 }
