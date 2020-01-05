@@ -54,14 +54,29 @@ function showdemo()
                     console.log(subject.fees);
                     console.log(subject.timing.day_1);
                     console.log(subject.timing.time_1.slot_1);
-                    var template = '<div class="col-lg-4 container-team-member">\
+                    var template = '<div class="col-lg-4 card">\
                     <div class="clearfix float-my-children">\
                     \
-                        <div class="team-member-details">\
-                            <span class="team-member-name" style="font-weight:500;" id="blue_text"><b>' +
-                    subject.subject_name + '</b></span><br />\
-                            <span style="font-weight:300;">' + subject.fees +
-                    '</span>\
+                        <div class="subject-details">\
+                            <h4 class="description"><b>' +
+                    subject.subject_name + '</b></h4><br />\
+                            <h5><b>' + subject.fees +
+                    '<b></h5>\
+                    \
+                    <button class="accordion">'+ subject.timing.day_1 +'</button>\
+                    <div class="panel">\
+                    <p>Lorem ipsum...</p>\
+                    </div>\
+\
+                    <button class="accordion">'+ subject.timing.day_2 +'</button>\
+                    <div class="panel">\
+                    <p>Lorem ipsum...</p>\
+                    </div>\
+\
+                    <button class="accordion">'+ subject.timing.day_3 +'</button>\
+                    <div class="panel">\
+                    <p>Lorem ipsum...</p>\
+                    </div>\
                         </div>\
                     </div>\
                 </div>';
