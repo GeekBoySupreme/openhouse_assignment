@@ -45,6 +45,7 @@ Tab Styles
   overflow: hidden;
   background-color: #ffffff;
   width:100%;
+  border-left: 3px solid rgb(54, 139, 224);
 }
 
 /* Style the buttons inside the tab */
@@ -59,9 +60,6 @@ Tab Styles
   font-size: 17px;
 }
 
-.tablinks button{
-  margin-right:5px;
-}
 
 
 
