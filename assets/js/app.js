@@ -54,13 +54,11 @@ function showdemo()
                     var template = '<div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">\
                         <div class="card">\
                             <h3 class="description>' + subject.subject_name +'</h3>\
-                            <div class="card-body" style="margin-top:-10px;">\
-                                <h4 class="description" style="font-weight:600; color:rgb(69, 150, 231);">' +
-                        subject.name + '</h4>\
-                        <h5 class="title" style="font-weight:600; color:rgb(69, 150, 231);"><b>' + (new Date(subject.local_date).toString()).substring(0,15) + '</b>&nbsp;&nbsp;<span style="font-weight:600; color:white;">' + subject.local_time + '</span></h5>\
-                        <h5 class="title" style="color:white;">' + subject.venue.name + ', <span style="color:white;">'+ subject.venue.address_1 +'</span></h5>\
-                        <a target="blank" style="background:rgb(0,101,202);" class="btn" href="'+ subject.link +'"> <b>RSVP</b> &nbsp;&nbsp;<span class="number_badge">&nbsp;'+ subject.yes_rsvp_count +'&nbsp;</span></a>\
-                            </div>\
+                            <div class="card-body">\
+                                <h4 class="description">Fees : Rs.' +
+                        subject.fees + '</h4>\
+                        \
+                           </div>\
                         </div>\
                     </div>';
                     return template;
