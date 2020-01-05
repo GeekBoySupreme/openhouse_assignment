@@ -70,17 +70,17 @@ function showdemo()
                     <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>\
                     </div>\
 \
-                    <div id="'+ subject.timing.day_1 +'" class="tabcontent">\
+                    <div id="'+ subject.timing.day_1 +'" class="tabcontent1">\
                     <h3>London</h3>\
                     <p>London is the capital city of England.</p>\
                     </div>\
 \
-                    <div id="'+ subject.timing.day_2 +'" class="tabcontent">\
+                    <div id="'+ subject.timing.day_2 +'" class="tabcontent1">\
                     <h3>Paris</h3>\
                     <p>Paris is the capital of France.</p> \
                     </div>\
 \
-                    <div id="'+ subject.timing.day_3 +'" class="tabcontent">\
+                    <div id="'+ subject.timing.day_3 +'" class="tabcontent1">\
                     <h3>Tokyo</h3>\
                     <p>Tokyo is the capital of Japan.</p>\
                     </div>\
@@ -108,7 +108,7 @@ function showdemo()
 //Controls opening of Tabs
 function openCity(evt, day) {
     var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName("tabcontent1");
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
