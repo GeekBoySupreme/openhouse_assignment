@@ -3,23 +3,12 @@
         "subject_name":"Physics",
         "fees":1000,
         "timing": {
-            "day_1":"monday",
-            "time_1":{
-                "slot_1":"10:30 AM",
-                "slot_2":"1:00 PM",
-                "slot_3":"5:00 PM"
-            },
+            "day_1":"Monday",
+            "time_1":["10:30AM", "2:00PM"],
             "day_2":"Wednesday",
-            "time_2":{
-                "slot_1":"10:30 AM",
-                "slot_2":"1:00 PM",
-                "slot_3":"5:00 PM"
-            },
+            "time_2":["10:30AM", "1:00PM", "5:00PM"],
             "day_3":"Thursday",
-            "time_3":{
-                "slot_1":"10:30 AM",
-                "slot_2":"1:00 PM"
-            }
+            "time_3":["10:30AM", "1:00PM"]
 
         }
     },
@@ -27,21 +16,12 @@
         "subject_name":"English",
         "fees":1000,
         "timing": {
-            "day_1":"monday",
-            "time_1":{
-                "slot_1":"10:30 AM"
-            },
+            "day_1":"Monday",
+            "time_1":["10:30AM"],
             "day_2":"Tuesday",
-            "time_2":{
-                "slot_1":"10:30 AM",
-                "slot_2":"1:00 PM",
-                "slot_3":"5:00 PM"
-            },
+            "time_2":["10:30AM", "1:00PM", "5:00PM"],
             "day_3":"Saturday",
-            "time_3":{
-                "slot_1":"10:30 AM",
-                "slot_2":"1:00 PM"
-            }
+            "time_3":["10:30AM", "1:00PM"]
 
         }
     }
