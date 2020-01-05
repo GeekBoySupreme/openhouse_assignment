@@ -58,7 +58,7 @@ function showdemo()
                         <div class="card_subject">\
                             <div class="card-body">\
                             <h4 class="description><b>' + subject.subject_name +'</b></h4>\
-                                <h5 class="description">Fees : Rs.' +
+                                <h5 class="description">Fees : Rs.' + subject.subject_name +
                         subject.fees + '</h5>\
                         \
                            </div>\
