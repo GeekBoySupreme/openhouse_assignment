@@ -235,3 +235,22 @@ form{
     margin-top:50px;
     margin-left:30px;
 }
+
+
+/* ==========================================================================
+Button Positions
+========================================================================== */
+
+#to_slide_two, #to_slide_three, #to_slide_four, #to_schedule_class
+{
+    float:right;
+    position: fixed;
+    right: 0;
+    margin-right:10px;
+    bottom: 15px!important;
+}
+
+#button_holder
+{
+    text-align:center;
+}
