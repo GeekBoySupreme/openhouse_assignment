@@ -1,0 +1,256 @@
+/* ==========================================================================
+Header
+========================================================================== */
+.icon_holder
+{
+    color: rgb(63, 118, 238);
+    background:transparent;
+    width:25%;
+    text-align:center;
+    font-weight:500;
+    font-size:30px;
+    transition:0.3s ease;
+    cursor: pointer;
+}
+
+.icon_holder:hover, .icon_holder:active{
+    color:rgb(250, 252, 251);
+}
+
+.active
+{
+    color:white;
+}
+
+
+#social_link
+{
+    color:rgb(52, 109, 241);
+}
+
+#social_button
+{
+    color:rgb(49, 118, 223);
+    font-size:22px;
+}
+
+#social_button1
+{
+    background:rgb(19, 101, 207);
+    font-size:22px;
+}
+
+.col-lg-2{
+  padding:10px;
+}
+
+.col-half-offset{
+    margin-left:4.166666667%
+}
+
+body {
+    margin-right: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: rgb(255, 254, 254);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nomob {
+    display: none;
+}
+
+.nodesk {
+    display: inline-block;
+}
+
+@media (min-width: 600px) and (orientation:landscape) {
+
+    .nomob {
+        display: block;
+    }
+
+    .nodesk {
+        display: none;
+    }
+}
+
+.main {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;
+    right: 0;
+}
+
+
+.page-header {
+    opacity: 1;
+}
+
+.texter,
+.navbar-toggler-icon {
+    color: rgb(236, 234, 234) !important;
+}
+
+.navbar-transparent .logo,
+.navbar-transparent .logo span {
+    /*display: none;*/
+    color: transparent !important;
+}
+
+#joinbtn {
+    background-color: rgb(83, 109, 254);
+    margin: 5px;
+}
+
+.logo {
+    color: rgb(83, 109, 254);
+    font-family: Open Sans;
+    font-weight: 500;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+#fb {
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#pro {
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.navbar-toggler-icon {
+    color: rgb(252, 247, 247);
+}
+
+#footie {
+    color: rgb(240, 238, 238);
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#heart {
+    color: rgb(250, 36, 5);
+    padding: 3px;
+}
+
+
+.navbar.fixed-top {
+    border-radius: 0;
+    padding: 0 !important;
+}
+
+#header-text {
+    cursor: pointer;
+}
+
+#hometop-container {
+    text-align: center;
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    z-index:1000;
+}
+
+#top_row
+{
+    background-color:black;
+}
+
+.nav-link{
+    color: #3c4858 !important;
+}
+
+.title
+{
+    font-family: 'Open Sans', sans-serif;
+    margin-top:0px;
+    color:#3DDB86;
+}
+.description
+{
+    color: rgb(228, 226, 226);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.number_badge
+{
+    color:rgb(0, 102, 255);
+    background:white;
+    font-size:12px;
+    min-width:30px;
+    padding:3px 5px 3px 5px;
+    border-radius:50px;
+    font-weight:600;
+}
+.icon
+{
+    font-size:30px;
+    background:#333232;
+    color:white;
+    padding:8px;
+    border-radius:50px;
+    margin:4px;
+    padding-left:16px;
+    padding-right:16px;
+
+}
+
+#mobile 
+{
+    background: rgb(65, 67, 70);
+}
+
+#details_redirect
+{
+    font-size: 16px;
+    color:rgb(0, 102, 255);
+    transition: 0.3s ease;
+}
+
+#details_redirect:hover{
+    color:rgb(253, 135, 204);
+}
+
+
+/* ==========================================================================
+Other color edits
+========================================================================== */
+a{
+    cursor: pointer;
+}
+p{
+    cursor: arrow;
+}
+#buttons {
+    background-color: rgb(52, 109, 241);
+    border-radius: 2px;
+}
+
+
+#blue_text {
+    color: rgb(69, 150, 231);
+}
+
+#green_text {
+    color: rgb(57, 182, 32);
+}
+
+#orange_text {
+    color: rgb(252, 189, 0);
+}
+
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+body{
+    overflow-x: hidden;
+}
+
+.tab { margin-left: 40px; }
