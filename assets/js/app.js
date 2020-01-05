@@ -69,7 +69,7 @@ function showdemo()
                 var size = 0; //to check the size of the file
                 var html = '';
 
-                var queryUrl='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                var queryUrl='https://openhouseparent.netlify.com/subject_details.json';
 
     
                 $.getJSON(queryUrl, function (subjects) {
