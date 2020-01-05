@@ -46,6 +46,7 @@ Tab Styles
   background-color: #ffffff;
   width:100%;
   border-left: 5px solid rgb(54, 139, 224);
+  margin-left:-15px;
 }
 
 /* Style the div inside the tab */
@@ -58,5 +59,4 @@ Tab Styles
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 20px;
-  margin-left:-15px;
 }
