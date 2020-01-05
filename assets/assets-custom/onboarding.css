@@ -45,14 +45,8 @@ Tab Styles
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-  float:left;
 }
 
-.tab_wrapper
-{
-  float:left;
-  text-align:left;
-}
 
 /* Style the buttons inside the tab */
 .tab button {

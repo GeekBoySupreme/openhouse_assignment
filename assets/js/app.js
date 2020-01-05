@@ -64,7 +64,6 @@ function showdemo()
                             <h5><b>Fees : Rs.' + subject.fees +
                     '<b></h5>\
                     \
-                    <div class="tab_wrapper">\
                     <div class="tab">\
                     <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>'+
                     gettime(subject.timing.time_1)+
@@ -76,7 +75,7 @@ function showdemo()
                     <div class="tab">\
                     <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>'+
                     gettime(subject.timing.time_3)+
-                    '</div></div>\
+                    '</div>\
                         </div>\
                     </div>\
                 </div>';
