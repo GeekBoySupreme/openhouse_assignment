@@ -45,10 +45,10 @@ Tab Styles
   overflow: hidden;
   background-color: #ffffff;
   width:100%;
-  border-left: 3px solid rgb(54, 139, 224);
+  border-left: 5px solid rgb(54, 139, 224);
 }
 
-/* Style the buttons inside the tab */
+/* Style the div inside the tab */
 .tablinks {
   background-color: inherit;
   float: left;
