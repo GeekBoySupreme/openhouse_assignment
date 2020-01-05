@@ -55,7 +55,7 @@ function showdemo()
     
                 function getTemplate(subject) {
 
-                    var template = '<div class="col-lg-4 card">\
+                    var template = '<div class="col-lg-6 card">\
                     <div class="clearfix float-my-children">\
                     \
                         <div class="subject-details">\
