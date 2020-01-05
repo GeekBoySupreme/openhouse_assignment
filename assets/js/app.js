@@ -64,19 +64,25 @@ function showdemo()
                             <h5><b>' + subject.fees +
                     '<b></h5>\
                     \
-                    <button class="accordion">'+ subject.timing.day_1 +'</button>\
-                    <div class="panel">\
-                    <p>Lorem ipsum...</p>\
+                    <div class="tab">\
+                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_1 +')">'+ subject.timing.day_1 +'</button>\
+                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_2 +')">'+ subject.timing.day_2 +'</button>\
+                    <button class="tablinks" onclick="openCity(event, '+ subject.timing.day_3 +')">'+ subject.timing.day_3 +'</button>\
                     </div>\
 \
-                    <button class="accordion">'+ subject.timing.day_2 +'</button>\
-                    <div class="panel">\
-                    <p>Lorem ipsum...</p>\
+                    <div id="'+ subject.timing.day_1 +'" class="tabcontent">\
+                    <h3>London</h3>\
+                    <p>London is the capital city of England.</p>\
                     </div>\
 \
-                    <button class="accordion">'+ subject.timing.day_3 +'</button>\
-                    <div class="panel">\
-                    <p>Lorem ipsum...</p>\
+                    <div id="'+ subject.timing.day_2 +'" class="tabcontent">\
+                    <h3>Paris</h3>\
+                    <p>Paris is the capital of France.</p> \
+                    </div>\
+\
+                    <div id="'+ subject.timing.day_3 +'" class="tabcontent">\
+                    <h3>Tokyo</h3>\
+                    <p>Tokyo is the capital of Japan.</p>\
                     </div>\
                         </div>\
                     </div>\
@@ -99,18 +105,17 @@ function showdemo()
 
 
 
-//Controls opening on Accordions
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+//Controls opening of Tabs
+function openCity(evt, day) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
-  });
-}
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(day).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
