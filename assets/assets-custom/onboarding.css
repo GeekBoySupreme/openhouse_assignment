@@ -70,7 +70,7 @@ Tab Styles
 }
 
 /* Style the tab content */
-.tabcontent {
+.tabcontent1 {
   display: none;
   padding: 6px 12px;
   -webkit-animation: fadeEffect 1s;
