@@ -1,6 +1,9 @@
 var page_param;
 var last_value;
 
+var name="Yoda";
+document.getElementById('user_name').innerHTML=name;
+
 function changepage(page_param)
 {
     switch(page_param)
