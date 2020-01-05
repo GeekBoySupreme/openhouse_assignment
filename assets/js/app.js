@@ -53,7 +53,7 @@ function showdemo()
     
                     var template = '<div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">\
                         <div class="card">\
-                            \
+                            <h3 class="description>' + subject.subject_name +'</h3>\
                             <div class="card-body" style="margin-top:-10px;">\
                                 <h4 class="description" style="font-weight:600; color:rgb(69, 150, 231);">' +
                         subject.name + '</h4>\
