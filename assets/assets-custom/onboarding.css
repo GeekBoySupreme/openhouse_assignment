@@ -8,10 +8,6 @@ Page Visibilities
 }
 
 
-
-
-
-
 .tabcontent {
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
   }
@@ -20,4 +16,28 @@ Page Visibilities
   @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+  }
+
+
+
+  #to_slide_two, #to_slide_three, #to_slide_four
+  {
+      float:right;
+      position: fixed;
+      right: 0;
+      margin-right:10px;
+      bottom: 15px!important;
+  }
+
+  #to_schedule_class
+  {
+    position: fixed;
+    right: 0;
+    margin-right:10px;
+    bottom: 15px!important;
+  }
+  
+  #button_holder
+  {
+      text-align:center;
   }
