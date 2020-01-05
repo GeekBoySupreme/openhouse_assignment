@@ -50,9 +50,9 @@ function showdemo()
         document.getElementById('container-subject').innerHTML='';
     
                 function getTemplate(subject) {
-    
+                    console.log(subject.subject_name);
                     var template = '<div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">\
-                        <div class="card">\
+                        <div class="card_subject">\
                             <h3 class="description>' + subject.subject_name +'</h3>\
                             <div class="card-body">\
                                 <h4 class="description">Fees : Rs.' +
