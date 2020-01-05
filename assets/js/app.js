@@ -55,10 +55,10 @@ function showdemo()
                     console.log(subject.timing.day_1);
                     console.log(subject.timing.time_1.slot_1);
                     var template = '<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">\
-                        <div class="card_subject">\
+                        <div class="card">\
                             <div class="card-body">\
-                                <p><h4 class="description"><b>' + subject.subject_name + '</b></h4></p><h6>Fees : Rs.'
-                        subject.fees + '</h6>\
+                                <p><h4 class="description"><b>' + subject.subject_name + '</b></h4></p><h5>Fees : Rs.'
+                        subject.fees + '</h5>\
                         \
                         <button class="accordion">'+ subject.timing.day_1 +'</button>\
                         <div class="panel">\
