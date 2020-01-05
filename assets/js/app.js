@@ -51,10 +51,7 @@ function showdemo()
         document.getElementById('container-subject').innerHTML='';
     
                 function getTemplate(subject) {
-                    console.log(subject.subject_name);
-                    console.log(subject.fees);
-                    console.log(subject.timing.day_1);
-                    console.log(subject.timing.time_1.slot_1);
+
                     var template = '<div class="col-lg-4 card">\
                     <div class="clearfix float-my-children">\
                     \
@@ -65,15 +62,15 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_1 +')"><b>'+ subject.timing.day_1 +'</b></button>'+
+                    <div class="tablinks"><b>'+ subject.timing.day_1 +'</b></div>'+
                     gettime(subject.timing.time_1)+
                     '</div>\
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_2 +')"><b>'+ subject.timing.day_2 +'</b></button>'+
+                    <div class="tablinks"><b>'+ subject.timing.day_2 +'</b></div>'+
                     gettime(subject.timing.time_2)+
                     '</div>\
                     <div class="tab">\
-                    <button class="tablinks" onclick="showtime('+ subject.timing.day_3 +')"><b>'+ subject.timing.day_3 +'</b></button>'+
+                    <div class="tablinks"><b>'+ subject.timing.day_3 +'</b></div>'+
                     gettime(subject.timing.time_3)+
                     '</div>\
                         </div>\
@@ -103,15 +100,4 @@ function gettime(time)
         code +='<button class="btn btn-primary btn-round">'+ time[i] +'</button>';
     }
     return code;
-}
-
-//Controls opening of Tabs
-function showtime(value)
-{
-    tabcontent1 = document.getElementsByClassName("tabcontent1");
-    for (i = 0; i < tabcontent1.length; i++) {
-        tabcontent1[i].style.display = "none";
-    }
-
-    document.getElementById(value).style.display="block";
 }
