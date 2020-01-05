@@ -50,9 +50,9 @@ function showdemo()
         document.getElementById('container-subject').innerHTML='';
     
                 function getTemplate(subject) {
-                    console.log(subject.subject_name);
+    
                     var template = '<div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">\
-                        <div class="card_subject">\
+                        <div class="card">\
                             <h3 class="description>' + subject.subject_name +'</h3>\
                             <div class="card-body">\
                                 <h4 class="description">Fees : Rs.' +
@@ -63,24 +63,39 @@ function showdemo()
                     </div>';
                     return template;
                 }
-                var cards = '';         
+                var cards = ''; 
+                var i=1;        
                 var temp = '' ;
+                var size = 0; //to check the size of the file
                 var html = '';
 
                 var queryUrl='https://openhouseparent.netlify.com/subject_details.json';
 
     
                 $.getJSON(queryUrl, function (subjects) {
+                    subjects.forEach(function (){
+                        size += 1
+                    });
+                });
+                $.getJSON(queryUrl, function (subjects) {
                     subjects.forEach(function (subject) {
                         cards += getTemplate(subject);
-                            temp= cards ;
+                        if(i%3 == 0){
+                            temp=
+                            '<div class="row equal mt-5 wow">' + cards + '</div>' ;
                             cards = '';
+                        };
                         html += temp;
                         temp = '';
-                        html += '<div class="row equal mt-5 wow">' + cards + '</div>' ;
+                        if(i==size){
+                            html += '<div class="row equal mt-5 wow">' + cards + '</div>' ;
                         };
+                        i += 1;
                     });
 
                     $('#container-subject').append(html);
+
+                
+                });
         
 }
