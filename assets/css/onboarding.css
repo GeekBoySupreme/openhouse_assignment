@@ -20,7 +20,9 @@ Page Visibilities
 
 
 
-  #to_slide_two, #to_slide_three, #to_slide_four, #to_schedule_class, #to_openhouse
+  #to_slide_two, #to_slide_three, 
+  #to_slide_four, #to_schedule_class, 
+  #to_openhouse
   {
       float:right;
       position: fixed;

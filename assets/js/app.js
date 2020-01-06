@@ -9,6 +9,7 @@ schedule.timeslots = timeslots;
 var name="Yoda";
 document.getElementById('user_name').innerHTML=name;
 
+//controlling page tabs visibility for onboarding
 function changepage(page_param)
 {
     switch(page_param)
@@ -54,8 +55,6 @@ function changepage(page_param)
 //fetches the json and renders data in the page
 function showdemo()
 {
-    console.log("Heck Yas");
-
         document.getElementById('container-subject').innerHTML='';
     
                 function getTemplate(subject) {
@@ -113,12 +112,11 @@ function gettime(time, day, subject)
 }
 
 
-
+//Sends data to Validation Form
 function addToConfirmation(subject, day, time)
 {
     html='';
-    //console.log("Function Hit");
-    console.log(subject+" "+day+" "+time);
+
     var pill_id = subject+"/"+day;
     var pill = document.getElementById(pill_id);
 
@@ -142,6 +140,7 @@ function addToConfirmation(subject, day, time)
 
 }
 
+//builds the json with preferred timeslots
 function jsonBuilder(subject, day, time)
 {
     var subject_name = subject;
@@ -158,8 +157,10 @@ function jsonBuilder(subject, day, time)
     schedule.timeslots.push(slot);
 }
 
+//sends timelsot data to server
 function sendToServer()
 {
+    //Redirecting to Success Page
     window.location = 'appointment.html', true;
     
     //Sending POST Request to a fake Server - for now
