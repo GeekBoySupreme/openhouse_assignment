@@ -100,7 +100,7 @@ function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation('+ subject +','+ day +','+ time[i] +')">'+ time[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation()">'+ time[i] +'</button>';
     }
     return code;
 }
