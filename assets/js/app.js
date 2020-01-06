@@ -100,16 +100,21 @@ function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation("'+ subject +'","'+ day +'","'+ time[i] +'")">'+ time[i] +'</button>';
+        var parameters=[subject,day,time];
+        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
     }
     return code;
 }
 
 
 
-function addToConfirmation(subject, day, time)
+function addToConfirmation(lot_of_values)
 {
     html='';
+    var subject=lot_of_values[0];
+    var day=lot_of_values[1];
+    var time=lot_of_values[2];
+
     console.log("Function Hit");
     var pill_id = subject+"/"+day;
     var pill = document.getElementById(pill_id);
