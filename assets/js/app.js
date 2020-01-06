@@ -1,11 +1,6 @@
 var page_param;
 var last_value;
 
-//To Build Final Information JSON
-var schedule = {};
-var timeslots = []
-schedule.timeslots = timeslots;
-
 var name="Yoda";
 document.getElementById('user_name').innerHTML=name;
 
@@ -107,58 +102,83 @@ function gettime(time, day, subject)
     var code='';
     for(var i=0; i<time.length; i++){
         var parameters="'"+subject+"','"+day+"','"+time[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round '+ subject +'/'+ day +'" id="'+ subject +'/'+ day + key +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ day + key +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
         key++;
     }
     return code;
 }
 
 
+var stack=[];
+var keystack=new stack();
+
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, key)
 {
     html='';
 
-    var pill_id = subject+"/"+day+key;
-    var pill = document.getElementById(pill_id);
+    var pill_id = subject+"/"+day;
+    var pill_id_key = subject+"/"+day+key;
+    var pill = document.getElementById(pill_id_key);
 
-    /*var pill_class = subject+"/"+day;
-    var pill_cluster = document.getElementsByClassName(pill_class);
+    if(stack.length==0)
+    {
+        stack.push(pill_id);
+        keystack.push(key);
 
-    for (i = 0; i < pill_cluster.length; i++) {
-        pill_cluster[i].className = pill_cluster[i].className.replace(" active", "");
-      }*/
+        pill.style.background="#fc6666";
+        pill.style.color="#ffffff";
 
-    pill.style.background="#fc6666";
-    pill.style.color="#ffffff";
-    //pill.className += "active";
+        html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
 
+        document.getElementById("schedule_container").innerHTML += html;
+        jsonBuilder(subject, day, time);
+    }
+    else if(stack.length!=0)
+    {
+        if(stack.peek()==pill_id)
+        {
+            if(keystack.peek()!=key)
+            {
+                var temp=stack.peek()+keystack.peek();
+                document.getElementById(temp).style.background="#f7d986";
+                document.getElementById(temp).style.color="#ffffff";
 
-    html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
+                stack.pop(); keystack.pop();
 
-    document.getElementById("schedule_container").innerHTML += html;
-    jsonBuilder(subject, day, time);
+                pill.style.background="#fc6666";
+                pill.style.color="#ffffff";
+
+                stack.push(pill_id);
+                keystack.push(key);
+
+                html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
+
+                document.getElementById("schedule_container").innerHTML += html;
+                jsonBuilder(subject, day, time);
+            }
+        }
+        else if(stack.peek()!=pill_id)
+        {
+            stack.push(pill_id);
+            keystack.push(key);
+
+            pill.style.background="#fc6666";
+            pill.style.color="#ffffff";
+
+            html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
+
+            document.getElementById("schedule_container").innerHTML += html;
+            jsonBuilder(subject, day, time);
+        }
+    }
+
+    
 
     return false;
 
 }
 
-//builds the json with preferred timeslots
-function jsonBuilder(subject, day, time)
-{
-    var subject_name = subject;
-    var day_of_week = day;
-    var timeslot= time;
-
-    var slot={
-        "subject_name": subject_name,
-        "day_of_week": day_of_week,
-        "timeslot":timeslot,
-        "username":name
-    }
-
-    schedule.timeslots.push(slot);
-}
 
 //sends timelsot data to server
 function sendToServer()
@@ -177,4 +197,28 @@ function sendToServer()
   .then(response => response.json())
   .then(json => console.log(json))
   //dumping json in console to validate. Won't be visible as window.location is set
+}
+
+
+
+//To Build Final Information JSON
+var schedule = {};
+var timeslots = []
+schedule.timeslots = timeslots;
+
+//builds the json with preferred timeslots
+function jsonBuilder(subject, day, time)
+{
+    var subject_name = subject;
+    var day_of_week = day;
+    var timeslot= time;
+
+    var slot={
+        "subject_name": subject_name,
+        "day_of_week": day_of_week,
+        "timeslot":timeslot,
+        "username":name
+    }
+
+    schedule.timeslots.push(slot);
 }
