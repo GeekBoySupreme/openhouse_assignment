@@ -48,7 +48,7 @@
                             </div>
                             <div class="row"> 
                                 <div class="col-lg-12">
-                                        <form action="onboard.html">
+                                        <form action="onboard.html" method="post" name="login_form">
                                                 <p>&nbsp;</p>
                                                 <p>&nbsp;</p>
                                                 <div class="form-group">
@@ -60,10 +60,10 @@
                                                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                                 </div>
                                               
-                                                <p>&nbsp;</p>
+                                                <p id="validate_message">&nbsp;</p>
                                                 <p>&nbsp;</p>
                                                 
-                                                <button type="submit" class="btn btn-primary btn-round btn-lg" id="login_button"><b>Submit</b></button>
+                                                <button type="submit" class="btn btn-primary btn-round btn-lg" id="login_button" onclick="authenticate()"><b>Submit</b></button>
                                               </form>
                                 </div>
                             </div>
@@ -83,6 +83,7 @@
             <script src="assets/js/bootstrap-material-design.js"></script>
             <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
             <script src="assets/js/material-kit.js?v=2.0.2"></script>
+            <script src="assets/js/authenticate.js"></script>
         
         </body>
         
