@@ -66,15 +66,15 @@ function showdemo()
                     \
                     <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_1 +'</b></div>'+
-                    gettime(subject.timing.time_1)+
+                    gettime(subject.timing.time_1, subject.timing.day_1, subject.subject_name)+
                     '</div>\
                     <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_2 +'</b></div>'+
-                    gettime(subject.timing.time_2)+
+                    gettime(subject.timing.time_2, subject.timing.day_2, subject.subject_name)+
                     '</div>\
                     <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_3 +'</b></div>'+
-                    gettime(subject.timing.time_3)+
+                    gettime(subject.timing.time_3, subject.timing.day_3, subject.subject_name)+
                     '</div>\
                         </div>\
                     </div>\
@@ -96,11 +96,11 @@ function showdemo()
 }
 
 
-function gettime(time)
+function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        code +='<button class="btn btn-primary btn-round">'+ time[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation('+ subject +','+ day +','+ time[i] +')">'+ time[i] +'</button>';
     }
     return code;
 }
