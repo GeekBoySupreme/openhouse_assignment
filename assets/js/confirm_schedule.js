@@ -3,7 +3,7 @@ var html='';
 function addToConfirmation(subject, day, time)
 {
     html='';
-    
+    console.log("Function Hit");
     var pill_id = subject+"/"+day;
     var pill = document.getElementById(pill_id);
 
