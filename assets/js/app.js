@@ -160,8 +160,9 @@ function jsonBuilder(subject, day, time)
 
 function sendToServer()
 {
-    //window.location = "appointment.html";
-    //Sending POST Request to a fake Server
+    window.location = 'appointment.html', true;
+    
+    //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify(schedule),
