@@ -100,7 +100,7 @@ function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        var parameters='"'+subject+'","'+day+'","'+time[i]+'"';
+        var parameters="'"+subject+"','"+day+"','"+time[i]+"'";
         code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick=addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
     }
     return code;
