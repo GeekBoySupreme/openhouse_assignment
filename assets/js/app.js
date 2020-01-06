@@ -100,35 +100,36 @@ function showdemo()
         
 }
 
+var key=0;
 
 function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        var parameters="'"+subject+"','"+day+"','"+time[i]+"'";
-        code +='<button class="btn btn-primary btn-round '+ subject +'/'+ day +'" id="'+ subject +'/'+ day +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
+        var parameters="'"+subject+"','"+day+"','"+time[i]+"','"+key+"'";
+        code +='<button class="btn btn-primary btn-round '+ subject +'/'+ day +'" id="'+ subject +'/'+ day + key +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
     }
     return code;
 }
 
 
 //Sends data to Validation Form
-function addToConfirmation(subject, day, time)
+function addToConfirmation(subject, day, time, key)
 {
     html='';
 
-    var pill_id = subject+"/"+day;
+    var pill_id = subject+"/"+day+key;
     var pill = document.getElementById(pill_id);
 
-    var pill_class = subject+"/"+day;
+    /*var pill_class = subject+"/"+day;
     var pill_cluster = document.getElementsByClassName(pill_class);
 
     for (i = 0; i < pill_cluster.length; i++) {
         pill_cluster[i].className = pill_cluster[i].className.replace(" active", "");
-      }
+      }*/
 
     pill.style.background="#fc6666";
-    pill.className += "active";
+    //pill.className += "active";
 
 
     html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
@@ -161,7 +162,7 @@ function jsonBuilder(subject, day, time)
 function sendToServer()
 {
     //Redirecting to Success Page
-    window.location = 'appointment.html', true;
+    window.location = 'appointment.html', true;//disable to see the json data being dumped in console
     
     //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -173,5 +174,5 @@ function sendToServer()
   })
   .then(response => response.json())
   .then(json => console.log(json))
-
+  //dumping json in console to validate. Won't be visible as window.location is set
 }
