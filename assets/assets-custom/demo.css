@@ -236,3 +236,7 @@ form{
     margin-left:30px;
 }
 
+#validate_message
+{
+    color : rgb(173, 52, 33);
+}
