@@ -109,71 +109,22 @@ function gettime(time, day, subject)
 }
 
 
-var stack=[];
-var keystack=new stack();
-
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, key)
 {
     html='';
 
-    var pill_id = subject+"/"+day;
-    var pill_id_key = subject+"/"+day+key;
-    var pill = document.getElementById(pill_id_key);
+    var pill_id = subject+"/"+day+key;
+    var pill = document.getElementById(pill_id);
 
-    if(stack.length==0)
-    {
-        stack.push(pill_id);
-        keystack.push(key);
 
-        pill.style.background="#fc6666";
-        pill.style.color="#ffffff";
+    pill.style.background="#fc6666";
+    pill.style.color="#ffffff";
 
-        html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
+    html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
 
-        document.getElementById("schedule_container").innerHTML += html;
-        jsonBuilder(subject, day, time);
-    }
-    else if(stack.length!=0)
-    {
-        if(stack.peek()==pill_id)
-        {
-            if(keystack.peek()!=key)
-            {
-                var temp=stack.peek()+keystack.peek();
-                document.getElementById(temp).style.background="#f7d986";
-                document.getElementById(temp).style.color="#ffffff";
-
-                stack.pop(); keystack.pop();
-
-                pill.style.background="#fc6666";
-                pill.style.color="#ffffff";
-
-                stack.push(pill_id);
-                keystack.push(key);
-
-                html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
-
-                document.getElementById("schedule_container").innerHTML += html;
-                jsonBuilder(subject, day, time);
-            }
-        }
-        else if(stack.peek()!=pill_id)
-        {
-            stack.push(pill_id);
-            keystack.push(key);
-
-            pill.style.background="#fc6666";
-            pill.style.color="#ffffff";
-
-            html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
-
-            document.getElementById("schedule_container").innerHTML += html;
-            jsonBuilder(subject, day, time);
-        }
-    }
-
-    
+    document.getElementById("schedule_container").innerHTML += html;
+    jsonBuilder(subject, day, time);
 
     return false;
 
