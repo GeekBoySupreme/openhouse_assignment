@@ -82,6 +82,7 @@ function showdemo()
                     return template;
                 }
                
+                //This URL can be replaced with the Endpoint that would serve a JSON 
                 var queryUrl='https://openhouseparent.netlify.com/subject_details.json';
 
     
@@ -131,14 +132,22 @@ function addToConfirmation(subject, day, time)
 
     document.getElementById("schedule_container").innerHTML += html;
 
+    return false;
 
+}
+
+
+function sendToServer()
+{
+    
+    //window.location = "appointment.html";
     //Sending POST Request to a fake Server
     fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
-      subject_name: subject,
-      day_of_week: day,
-      timeslot: time,
+      subject_name: 'subject',
+      day_of_week: 'day',
+      timeslot: 'time',
       userId: 1
     }),
     headers: {

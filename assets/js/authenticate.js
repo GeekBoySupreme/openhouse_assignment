@@ -12,6 +12,7 @@ function authenticate()
         else{
             //document.getElementById("validate_message").style.display="block";
             document.getElementById("validate_message").innerHTML="Wrong Inputs! Try again."
+            return false;
         }
     
 }
