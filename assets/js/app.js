@@ -1,6 +1,11 @@
 var page_param;
 var last_value;
 
+//To Build Final Information JSON
+var schedule = {};
+var timeslots = []
+schedule.timeslots = timeslots;
+
 var name="Yoda";
 document.getElementById('user_name').innerHTML=name;
 
@@ -131,25 +136,36 @@ function addToConfirmation(subject, day, time)
     html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
+    jsonBuilder(subject, day, time);
 
     return false;
 
 }
 
+function jsonBuilder(subject, day, time)
+{
+    var subject_name = subject;
+    var day_of_week = day;
+    var timeslot= time;
+
+    var slot={
+        "subject_name": subject_name,
+        "day_of_week": day_of_week,
+        "timeslot":timeslot
+    }
+
+    schedule.timeslots.push(slot);
+}
 
 function sendToServer()
 {
     
+    schedule.timeslots[0].username = name;
     //window.location = "appointment.html";
     //Sending POST Request to a fake Server
     fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
-    body: JSON.stringify({
-      subject_name: 'subject',
-      day_of_week: 'day',
-      timeslot: 'time',
-      userId: 1
-    }),
+    body: JSON.stringify(schedule),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
     }
