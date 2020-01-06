@@ -130,4 +130,22 @@ function addToConfirmation(subject, day, time)
     html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
+
+
+    //Sending POST Request to a fake Server
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      subject_name: subject,
+      day_of_week: day,
+      timeslot: time,
+      userId: 1
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+
 }
