@@ -100,18 +100,18 @@ function gettime(time, day, subject)
 {
     var code='';
     for(var i=0; i<time.length; i++){
-        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation()">'+ time[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round '+ subject +"/"+ day +'" id="'+ subject +"/"+ day +'" onclick="addToConfirmation('+ subject +','+ day +','+ time[i] +')">'+ time[i] +'</button>';
     }
     return code;
 }
 
 
 
-function addToConfirmation()
+function addToConfirmation(subject, day, time)
 {
     html='';
     console.log("Function Hit");
-    /*var pill_id = subject+"/"+day;
+    var pill_id = subject+"/"+day;
     var pill = document.getElementById(pill_id);
 
     var pill_class = subject+"/"+day;
@@ -128,5 +128,5 @@ function addToConfirmation()
     html='<div id='+ subject +'><h4 class="description">'+ subject +'</h4><h5 class="description>'+ day +', <span id="blue_text>'+ time +'</span></h5></div>';
     $('#schedule_container').append(html);
 
-    document.getElementById("schedule_container").innerHTML += html;*/
+    document.getElementById("schedule_container").innerHTML += html;
 }
