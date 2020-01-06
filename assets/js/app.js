@@ -130,6 +130,7 @@ function addToConfirmation(subject, day, time, key)
       }*/
 
     pill.style.background="#fc6666";
+    pill.style.color="#ffffff";
     //pill.className += "active";
 
 
