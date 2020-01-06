@@ -127,8 +127,7 @@ function addToConfirmation(subject, day, time)
     pill.className += "active";
 
 
-    html='<div id='+ subject +'><h4 class="description">'+ subject +'</h4><h5 class="description>'+ day +', <span id="blue_text>'+ time +'</span></h5></div>';
-    $('#schedule_container').append(html);
+    html='<div id='+ subject +'><h4 class="description">'+ subject+' '+day+' '+time +'</h4></div>';
 
     document.getElementById("schedule_container").innerHTML += html;
 }
