@@ -111,7 +111,8 @@ function gettime(time, day, subject)
 function addToConfirmation(subject, day, time)
 {
     html='';
-    console.log("Function Hit");
+    //console.log("Function Hit");
+    console.log(subject+" "+day+" "+time);
     var pill_id = subject+"/"+day;
     var pill = document.getElementById(pill_id);
 
