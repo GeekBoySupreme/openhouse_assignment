@@ -151,7 +151,8 @@ function jsonBuilder(subject, day, time)
     var slot={
         "subject_name": subject_name,
         "day_of_week": day_of_week,
-        "timeslot":timeslot
+        "timeslot":timeslot,
+        "username":name
     }
 
     schedule.timeslots.push(slot);
@@ -159,8 +160,6 @@ function jsonBuilder(subject, day, time)
 
 function sendToServer()
 {
-    
-    schedule.timeslots[0].username = name;
     //window.location = "appointment.html";
     //Sending POST Request to a fake Server
     fetch('https://jsonplaceholder.typicode.com/posts', {
