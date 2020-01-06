@@ -5340,7 +5340,7 @@ tbody.collapse.show {
 
 .close {
     float: right;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 500;
     line-height: 1;
     color: #000000;
@@ -5565,18 +5565,17 @@ button.close {
 }
 
 .modal-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
     padding: 1rem;
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
+    text-align:left;
 }
 
 .modal-header .close {
     padding: 1rem;
     margin: -1rem -1rem -1rem auto;
+    float:left;
 }
 
 .modal-title {
@@ -5597,6 +5596,7 @@ button.close {
     padding: 1rem;
     border-top: 1px solid #e9ecef;
 }
+
 
 .modal-footer> :not(:first-child) {
     margin-left: .25rem;
@@ -15318,9 +15318,9 @@ h2.title {
 
 .modal-dialog .modal-footer button {
     margin: 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
 }
 
 .modal-dialog .modal-footer button.pull-left {
@@ -15401,7 +15401,7 @@ h2.title {
 }
 
 .modal .modal-header .close {
-    color: #999;
+    color: rgb(34, 32, 32);
 }
 
 .modal .modal-header .close:hover,
@@ -15410,7 +15410,7 @@ h2.title {
 }
 
 .modal .modal-header .close i {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .modal-notice .instruction {
