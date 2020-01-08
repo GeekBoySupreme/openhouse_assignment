@@ -48,6 +48,7 @@ Tab Styles
   background-color: #ffffff;
   width:100%;
   margin-left:-10px;
+  display:inline;
 }
 
 /* Style the div inside the tab */
@@ -56,7 +57,7 @@ Tab Styles
   color:rgb(19, 88, 156);
   border-radius:3px;
   width:33%;
-  margin-left:1px;
+  margin:1px;
   text-align:left;
   border: none;
   outline: none;
