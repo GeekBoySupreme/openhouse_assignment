@@ -40,6 +40,10 @@ function showdemo()
     
                 function getTemplate(subject) {
 
+                    var subject_id_1 = subject.subject_name + subject.timing.batch_1[0];
+                    var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
+                    var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
+
                     var template = '<div class="col-lg-6 card">\
                     <div class="clearfix float-my-children">\
                     \
@@ -50,9 +54,13 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_1,subject_id_2,subject_id_3) +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_2,subject_id_1,subject_id_3) +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    </div>\
+                    \
+                    <div id="'+ subject_id_1 +'">\
+                    '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
                     </div>\
                     </div>\
                 </div>\
@@ -76,31 +84,39 @@ function showdemo()
 
 var key=0;
 
-function gettime(time, day, subject)
+function gettime(timing, subject)
 {
     var code='';
-    for(var i=0; i<time.length; i++){
-        var parameters="'"+subject+"','"+day+"','"+time[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ day + key +'" onclick="addToConfirmation('+ parameters +')">'+ time[i] +'</button>';
+    for(var i=2; i<timing.length; i++){
+        var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
+        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ timing[0] + timing[i] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
         key++;
     }
     return code;
 }
 
+//reveal Date Widget Panel
+function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3)
+{
+    document.getElementById(widget_id_1).style.display="block";
+    document.getElementById(widget_id_2).style.display="none";
+    document.getElementById(widget_id_3).style.display="none";
+    
+}
 
 //Sends data to Validation Form
-function addToConfirmation(subject, day, time, key)
+function addToConfirmation(subject, day, time, date, key)
 {
     html='';
 
-    var pill_id = subject+"/"+day+key;
+    var pill_id = subject+"/"+day+date+key;
     var pill = document.getElementById(pill_id);
 
 
     pill.style.background="#fc6666";
     pill.style.color="#ffffff";
 
-    html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'</h5></div><p>&nbsp;</p>';
+    html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
     jsonBuilder(subject, day, time);
