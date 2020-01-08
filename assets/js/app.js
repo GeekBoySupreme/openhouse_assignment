@@ -46,6 +46,8 @@ function showdemo()
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
 
                     sub_1="'"+subject_id_1+"'";
+                    sub_2="'"+subject_id_2+"'";
+                    sub_3="'"+subject_id_3+"'";
 
                     var template = '<div class="col-lg-6 card">\
                     <div class="clearfix float-my-children">\
@@ -57,9 +59,9 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+sub_1+')"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+sub_1+','+sub_2+','+sub_3+')"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'" onclick="showWidgetPanel('+sub_2+','+sub_1+','+sub_3+')"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'" onclick="showWidgetPanel('+sub_3+','+sub_2+','+sub_1+')"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
                     \
                     <div id="'+ subject_id_1 +'" class="widget_panel">\
@@ -106,9 +108,11 @@ function gettime(timing, subject)
     return code;
 }
 
-function showWidgetPanel(widget_id)
+function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3)
 {
-  document.getElementById(widget_id).style.display="none";
+  document.getElementById(widget_id_1).style.display="block";
+  document.getElementById(widget_id_2).style.display="none";
+  document.getElementById(widget_id_3).style.display="none";
 }
 
 //Sends data to Validation Form
