@@ -125,7 +125,7 @@ function addToConfirmation(subject, day, time, date, key)
     var pill = document.getElementById(pill_id);
 
     var check=document.getElementsByClassName(subject);
-    for(var i=0, i<check.length; i++)
+    for(var i=0, i!=check.length; i++)
     {
       if(check[i].style.background=="#fc6666"){
         check[i].style.background="#f7d986";
