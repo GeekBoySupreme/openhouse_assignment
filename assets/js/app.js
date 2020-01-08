@@ -110,7 +110,7 @@ function gettime(timing, subject)
 function showWidgetPanel()
 {
     
-('#subject_widget_1').click(function()
+$('#subject_widget_1').click(function()
 {
     document.getElementById(sub_1).style.display="block";
     document.getElementById(subject_id_2).style.display="none";
