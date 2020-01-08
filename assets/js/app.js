@@ -55,8 +55,8 @@ function showdemo()
                         <div class="subject-details">\
                             <h3 class="description"><b>' +
                     subject.subject_name + '</b></h3>\
-                            <h5><b>Fees : Rs.' + subject.fees +
-                    '<b></h5>\
+                            <h5 class="description">Fees : Rs.' + subject.fees +
+                    '</h5>\
                     \
                     <div class="tab">\
                     <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+sub_1+','+sub_2+','+sub_3+')"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
