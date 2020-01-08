@@ -100,7 +100,7 @@ function gettime(timing, subject)
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ timing[0] + timing[i] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
         key++;
     }
     return code;
@@ -108,7 +108,7 @@ function gettime(timing, subject)
 
 $('subject_widget_1').click(function()
     {
-        document.getElementById('PhysicsMonday').style.display="block";
+        document.getElementById('PhysicsMonday').style.display="none";
     })
 
 
