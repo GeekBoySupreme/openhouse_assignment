@@ -8,10 +8,10 @@ Page Visibilities
 }
 
 
-.tabcontent {
+.tabcontent, .widget_panel {
     animation: fadeEffect 1s; /* Fading effect takes 1 second */
   }
-  
+
   /* Go from zero to full opacity */
   @keyframes fadeEffect {
     from {opacity: 0;}
@@ -20,8 +20,8 @@ Page Visibilities
 
 
 
-  #to_slide_two, #to_slide_three, 
-  #to_slide_four, #to_schedule_class, 
+  #to_slide_two, #to_slide_three,
+  #to_slide_four, #to_schedule_class,
   #to_openhouse
   {
       float:right;
@@ -47,7 +47,7 @@ Tab Styles
   overflow: hidden;
   background-color: #ffffff;
   width:100%;
-  margin-left:-5px;
+  margin-left:-3px;
   text-align:center;
 }
 
@@ -77,4 +77,10 @@ Tab Styles
 {
   text-align:justify;
   display:none;
+}
+
+.time_pill
+{
+  width:30%;
+  margin:2px;
 }

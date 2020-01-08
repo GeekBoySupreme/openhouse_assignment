@@ -102,7 +102,7 @@ function gettime(timing, subject)
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round time_pill" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
         key++;
     }
     return code;
@@ -120,7 +120,7 @@ function addToConfirmation(subject, day, time, date, key)
 {
     html='';
 
-    var pill_id = subject+"/"+day+date+key;
+    var pill_id = subject+"/"+day+key;
     var pill = document.getElementById(pill_id);
 
 

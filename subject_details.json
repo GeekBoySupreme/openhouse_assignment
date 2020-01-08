@@ -7,6 +7,15 @@
             "batch_2":["Tuesday", "11:30AM", "Jan 19", "Jan 06", "Jan 15"],
             "batch_3":["Sunday", "12:30AM", "Jan 10", "Jan 12", "Jan 22"]
         }
+    },
+    {
+        "subject_name":"English",
+        "fees":2000,
+        "timing": {
+            "batch_1":["Monday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"],
+            "batch_2":["Tuesday", "11:30AM", "Jan 19", "Jan 06", "Jan 15"],
+            "batch_3":["Thursday", "12:30AM", "Jan 10", "Jan 12", "Jan 22"]
+        }
     }
 
 ]
