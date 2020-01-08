@@ -116,6 +116,15 @@ function showWidgetPanel()
 
 }
 
+('#subject_widget_1').click(function()
+{
+    alert("Button Clicked");
+    document.getElementById(subject_id_1).style.display="block";
+    document.getElementById(subject_id_2).style.display="none";
+    document.getElementById(subject_id_3).style.display="none";
+});
+
+
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
 {
