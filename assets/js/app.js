@@ -48,17 +48,17 @@ function showdemo()
                     subject.subject_name + '</b></h3>\
                             <h5><b>Fees : Rs.' + subject.fees +
                     '<b></h5>\
-                    <div class="row">\
-                    <div class="tab col-lg-4">\
+                    \
+                    <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_1 +'</b><br>'+ subject.timing.time_1[0] +'</div>'
                     '</div>\
-                    <div class="tab col-lg-4">\
+                    <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_2 +'</b><br>'+ subject.timing.time_2[0] +'</div>'
                     '</div>\
-                    <div class="tab col-lg-4">\
+                    <div class="tab">\
                     <div class="tablinks"><b>'+ subject.timing.day_3 +'</b><br>'+ subject.timing.time_3[0] +'</div>'
                     '</div>\
-                    </div>\
+                    \
                         </div>\
                     </div>\
                 </div>';

@@ -46,8 +46,9 @@ Tab Styles
 .tab {
   overflow: hidden;
   background-color: #ffffff;
-  /*width:100%;
-  border-left: 5px solid rgb(54, 139, 224);
+  width:33.33%;
+  margin:3px;
+  /*border-left: 5px solid rgb(54, 139, 224);
   margin-left:-10px;*/
 }
 
