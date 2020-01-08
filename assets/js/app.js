@@ -53,8 +53,9 @@ function showdemo()
                     <button class="tablinks"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
                     <button class="tablinks"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
                     <button class="tablinks"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
-                        </div>\
                     </div>\
+                    </div>\
+                </div>\
                 </div>';
                     return template;
                 }
