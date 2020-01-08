@@ -58,6 +58,7 @@ function showdemo()
                     <div class="tab" col-lg-4>\
                     <div class="tablinks"><b>'+ subject.timing.day_3 +'</b><br>'+ subject.timing.time_3[0] +'</div>'
                     '</div>\
+                    </div>\
                         </div>\
                     </div>\
                 </div>';
