@@ -57,9 +57,9 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel("'+subject.subject_name +'","'+ subject.timing.batch_1[0]+'")"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
                     \
                     <div id="'+ subject_id_1 +'" class="widget_panel">\
@@ -106,12 +106,10 @@ function gettime(timing, subject)
     return code;
 }
 
-$('subject_widget_1').click(function()
-    {
-        document.getElementById('PhysicsMonday').style.display="none";
-    })
-
-
+function showWidgetPanel(subject, day)
+{
+  document.getElementById(subject+day).style.display="none";
+}
 
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
