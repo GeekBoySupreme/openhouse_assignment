@@ -124,13 +124,6 @@ function addToConfirmation(subject, day, time, date, key)
     var pill_id = subject+"/"+day+key;
     var pill = document.getElementById(pill_id);
 
-    var check=document.querySelectorAll(subject);
-    for(var i=0; i<check.length; i++)
-    {
-        check[i].setAttribute("style", "background-color: #f7d986;");
-        check[i].setAttribute("style", "color: white;");
-    }
-
     pill.style.background="#fc6666";
     pill.style.color="#ffffff";
 
