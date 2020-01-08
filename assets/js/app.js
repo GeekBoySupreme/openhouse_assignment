@@ -62,6 +62,12 @@ function showdemo()
                     <div id="'+ subject_id_1 +'">\
                     '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
                     </div>\
+                    <div id="'+ subject_id_2 +'">\
+                    '+ gettime(subject.timing.batch_2, subject.subject_name) +'\
+                    </div>\
+                    <div id="'+ subject_id_3 +'">\
+                    '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
+                    </div>\
                     </div>\
                 </div>\
                 </div>';
