@@ -116,14 +116,14 @@ function showWidgetPanel()
 
 }
 
-('#subject_widget_1').click(function()
-{
-    alert("Button Clicked");
-    document.getElementById(subject_id_1).style.display="block";
-    document.getElementById(subject_id_2).style.display="none";
-    document.getElementById(subject_id_3).style.display="none";
+jQuery(':button').click(function () {
+    if (this.id == 'subject_widget_1') {
+        alert('Button 1 was clicked');
+    }
+    else if (this.id == 'button2') {
+        alert('Button 2 was clicked');
+    }
 });
-
 
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
