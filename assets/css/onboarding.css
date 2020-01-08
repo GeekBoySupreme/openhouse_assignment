@@ -46,14 +46,15 @@ Tab Styles
 .tab {
   overflow: hidden;
   background-color: #ffffff;
-  width:100%;
+  /*width:100%;
   border-left: 5px solid rgb(54, 139, 224);
-  margin-left:-10px;
+  margin-left:-10px;*/
 }
 
 /* Style the div inside the tab */
 .tablinks {
-  background-color: inherit;
+  background-color: rgb(54, 139, 224);
+  color:white;
   float: left;
   border: none;
   outline: none;
