@@ -102,12 +102,13 @@ function gettime(timing, subject)
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round time_pill" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
+        code +='<button class="btn btn-primary btn-round time_pill '+ subject +'" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
         key++;
     }
     return code;
 }
 
+//Shows widget panel
 function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3)
 {
   document.getElementById(widget_id_1).style.display="block";
@@ -123,6 +124,14 @@ function addToConfirmation(subject, day, time, date, key)
     var pill_id = subject+"/"+day+key;
     var pill = document.getElementById(pill_id);
 
+    var check=document.getElementsByClassName(subject);
+    for(var i=0, i<check.length; i++)
+    {
+      if(check[i].style.background=="#fc6666"){
+        check[i].style.background="#f7d986";
+        check[i].style.color="#000000";
+      }
+    }
 
     pill.style.background="#fc6666";
     pill.style.color="#ffffff";
@@ -130,7 +139,7 @@ function addToConfirmation(subject, day, time, date, key)
     html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
-    jsonBuilder(subject, day, time);
+    jsonBuilder(subject, day, time, date);
 
     return false;
 
@@ -164,16 +173,18 @@ var timeslots = []
 schedule.timeslots = timeslots;
 
 //builds the json with preferred timeslots
-function jsonBuilder(subject, day, time)
+function jsonBuilder(subject, day, time, date)
 {
     var subject_name = subject;
     var day_of_week = day;
     var timeslot= time;
+    var date_class = date;
 
     var slot={
         "subject_name": subject_name,
         "day_of_week": day_of_week,
         "timeslot":timeslot,
+        "date":date_class,
         "username":name
     }
 
