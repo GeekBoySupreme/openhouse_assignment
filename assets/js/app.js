@@ -52,13 +52,6 @@ function showdemo()
                     subject.subject_name + '</b></h3>\
                             <h5><b>Fees : Rs.' + subject.fees +
                     '<b></h5>\
-                    \
-                    <div class="tab">\
-                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_1,subject_id_2,subject_id_3) +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_2,subject_id_1,subject_id_3) +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
-                    </div>\
-                    \
                     <div id="'+ subject_id_1 +'">\
                     '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
                     </div>\
@@ -68,6 +61,13 @@ function showdemo()
                     <div id="'+ subject_id_3 +'">\
                     '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
                     </div>\
+                    \
+                    <div class="tab">\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_1,subject_id_2,subject_id_3) +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_2,subject_id_1,subject_id_3) +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    </div>\
+                    \
                     </div>\
                 </div>\
                 </div>';
