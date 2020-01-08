@@ -45,7 +45,7 @@ function showdemo()
                     var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
 
-                    sub_1=subject_id_1;
+                    sub_1="'"+subject_id_1+"'";
 
                     var template = '<div class="col-lg-6 card">\
                     <div class="clearfix float-my-children">\
@@ -57,7 +57,7 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel("'+subject_id_1+'")"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+sub_1+')"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
                     <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
                     <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
