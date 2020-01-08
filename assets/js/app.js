@@ -85,6 +85,8 @@ function showdemo()
                 });
                 $('#container-subject').append(html);
             });
+
+            showWidgetPanel();
         
 }
 
@@ -102,20 +104,17 @@ function gettime(timing, subject)
 }
 
 //reveal Date Widget Panel
-function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3)
+function showWidgetPanel()
 {
-    document.getElementById(subject_id_1).style.display="block";
-    document.getElementById(subject_id_2).style.display="none";
-    document.getElementById(subject_id_3).style.display="none";
     
-}
-
 ('#subject_widget_1').click(function()
 {
     document.getElementById(subject_id_1).style.display="block";
     document.getElementById(subject_id_2).style.display="none";
     document.getElementById(subject_id_3).style.display="none";
 });
+
+}
 
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
