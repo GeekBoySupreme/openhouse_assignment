@@ -44,7 +44,6 @@ function showdemo()
                     var subject_id_1 = subject.subject_name + subject.timing.batch_1[0];
                     var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
-                    console.log(subject.subject_name);
 
                     sub_1=subject_id_1;
 
@@ -58,9 +57,9 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="subject_widget_1" onclick="console.log('+ subject.subject_name +')"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks" id="subject_widget_2"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks" id="subject_widget_3"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
                     \
                     <div id="'+ subject_id_1 +'" class="widget_panel">\
