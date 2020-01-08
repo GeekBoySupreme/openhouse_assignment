@@ -50,15 +50,14 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_1 +'</b><br>'+ subject.timing.time_1[0] +'</div>'
+                    <div class="tablinks"><b>'+ subject.timing.day_1 +'</b></div>'
                     '</div>\
                     <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_2 +'</b><br>'+ subject.timing.time_2[0] +'</div>'
+                    <div class="tablinks"><b>'+ subject.timing.day_2 +'</b></div>'
                     '</div>\
                     <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_3 +'</b><br>'+ subject.timing.time_3[0] +'</div>'
+                    <div class="tablinks"><b>'+ subject.timing.day_3 +'</b></div>'
                     '</div>\
-                    \
                         </div>\
                     </div>\
                 </div>';
