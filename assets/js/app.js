@@ -32,6 +32,7 @@ function changepage(page_param)
     }
 }
 
+var sub_1, sub_2, sub_3;
 
 //fetches the json and renders data in the page
 function showdemo()
@@ -43,6 +44,8 @@ function showdemo()
                     var subject_id_1 = subject.subject_name + subject.timing.batch_1[0];
                     var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
+
+                    sub_1=subject_id_1;
 
                     var template = '<div class="col-lg-6 card">\
                     <div class="clearfix float-my-children">\
@@ -109,7 +112,7 @@ function showWidgetPanel()
     
 ('#subject_widget_1').click(function()
 {
-    document.getElementById(subject_id_1).style.display="block";
+    document.getElementById(sub_1).style.display="block";
     document.getElementById(subject_id_2).style.display="none";
     document.getElementById(subject_id_3).style.display="none";
 });
