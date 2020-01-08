@@ -116,14 +116,6 @@ function showWidgetPanel()
 
 }
 
-jQuery(':button').click(function () {
-    if (this.id == 'subject_widget_1') {
-        alert('Button 1 was clicked');
-    }
-    else if (this.id == 'button2') {
-        alert('Button 2 was clicked');
-    }
-});
 
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
