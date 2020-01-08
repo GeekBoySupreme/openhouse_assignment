@@ -18,6 +18,10 @@
             crossorigin="anonymous">
 
         <script src="assets/js/authenticate.js"></script>
+        <script src="assets/js/app.js"></script>
+        
+        <link href="assets/css/onboarding.css" rel="stylesheet" />
+        
 
         <style>
             html{
@@ -30,41 +34,142 @@
     <body class="landing-page">
 
                 <div class="container">
-                    <div class="row">
-                                         
-                        <div class="col-md-12 header_container" style=" background: #fce093; background-size: 100% auto;">     
-                                <span id="login_guide_text">
-                                    <p>&nbsp;</p>
-                                    <p>&nbsp;</p>
-                                    <h3 class="title">Enter Phone Number<br> & <br>Password</h3>
-                                    <p>&nbsp;</p>
-                                    <p>&nbsp;</p>
-
-                                </span>
+                        <div class="tabcontent" id="page_1">
+                                <div class="row mt-5 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                
+                                     <!--Second column-->
+                                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                                        <!--Card-->
+                                        
+                                        <img alt="Community Members image" class="img-fluid" src="https://cfl.dropboxstatic.com/static/images/file_collector/file-requests-illo-vflMmolaZ.png" width="100%" />
+                                        <p>&nbsp;</p>
+                
+                                    </div>
+                                    <!--/.Second column-->
+                
+                                        <!--First column-->
+                                        <div class="col-lg-6">
+                                            <!--Card-->
+                                            
+                                            <h3 class="title" id="tracks">Explore</h3>
+                                            <!--Card--> 
+                                            <p><h4 class="description">Some welcome text.<br>Resisting typing jabberwocky.</h4></p>    
+                                            <p>&nbsp;</p>
+                                            <button class="btn btn-primary btn-round" id="to_slide_two" onclick="changepage(2)"><b>Next</b></button>
+                                          
+                                            </p>
+                                            <!--/.Card--> 
+                                        </div>
+                                        <!--/.First column-->
+                                       
+                                    </div>
                                 </div>
-                                               
-                            </div>
-                            <div class="row"> 
-                                <div class="col-lg-12">
-                                        <div method="post" name="login_form">
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                <div class="form-group">
-                                                 
-                                                  <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="PhoneHelp" placeholder="Enter Phone Number">
-                                                  </div>
-                                                <div class="form-group">
-                                                  
-                                                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                </div>
-                                              
-                                                <p id="validate_message">&nbsp;</p>
-                                                <p>&nbsp;</p>
+                            
+                                <!--Page 2-->
+                                <div class="tabcontent" id="page_2">
+                                        <div class="row mt-5 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                        
+                                             <!--Second column-->
+                                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                                                <!--Card-->
                                                 
-                                                <button type="submit" class="btn btn-primary btn-round btn-lg" id="login_button" onclick="authenticate()"><b>Submit</b></button>
+                                                <img alt="Community Members image" class="img-fluid" src="https://images.ctfassets.net/wrfb3hbaoyr0/jTl5C0s1IOWgimi0gwYqA/2b64ddb9da0dc7c01f7764c1894ad086/MoB-Illo-02-V05-4xA.jpg" width="100%" />
+                                                <p>&nbsp;</p>
+                        
                                             </div>
-                                </div>
-                            </div>
+                                            <!--/.Second column-->
+                        
+                                                <!--First column-->
+                                                <div class="col-lg-6">
+                                                    <!--Card-->
+                                                    
+                                                    <h3 class="title" id="tracks">Learn</h3>
+                                                    <!--Card--> 
+                                                    <p><h4 class="description">We believe students should be able to learn all things under one roof;</h4></p>    
+                                                    <p>&nbsp;</p>
+                                                    <p>&nbsp;</p>
+                                                    <button class="btn btn-primary btn-round" id="to_slide_three" onclick="changepage(3)"><b>Next</b></button>
+                                                  
+                                                    </p>
+                                                    <!--/.Card--> 
+                                                </div>
+                                                <!--/.First column-->
+                                               
+                                            </div>
+                                        </div>
+
+                                    <!--Page 3-->
+                                     <div class="tabcontent" id="page_3">
+                                        <div class="row mt-5 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                        
+                                             <!--Second column-->
+                                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s" style="text-align:left;">
+                                                <!--Card-->
+                                                
+                                                <img alt="Community Members image" class="img-fluid" src="https://dribbble-assets.s3.amazonaws.com/blog/about_gif.gif" width="100%" />
+                                                <p>&nbsp;</p>
+                        
+                                            </div>
+                                            <!--/.Second column-->
+                        
+                                                <!--First column-->
+                                                <div class="col-lg-6">
+                                                    <!--Card-->
+                                                    
+                                                    <h3 class="title" id="tracks">Grow</h3>
+                                                    <!--Card--> 
+                                                    <p><h4 class="description">We let you Explore, Discover, Experience, and Learn.</h4></p>    
+                                                    <p>&nbsp;</p>
+                                                    <button class="btn btn-primary btn-round" id="to_slide_four" onclick="changepage(4)"><b>Next</b></button>
+                                                  
+                                                    </p>
+                                                    <!--/.Card--> 
+                                                </div>
+                                                <!--/.First column-->
+                                               
+                                            </div>
+                                        </div>
+
+                                        <!--Page 4-->
+                                        <div class="tabcontent" id="page_4">
+                                                <div class="row">
+                                                                    
+                                                        <div class="col-md-12 header_container" style=" background: #fce093; background-size: 100% auto;">     
+                                                                <span id="login_guide_text">
+                                                                    <p>&nbsp;</p>
+                                                                    <p>&nbsp;</p>
+                                                                    <h3 class="title">Welcome <br>To <br>Openhouse</h3>
+                                                                    <p>&nbsp;</p>
+                                                                    <p>&nbsp;</p>
+    
+                                                                </span>
+                                                                </div>
+                                                                            
+                                                            </div>
+                                                            <div class="row"> 
+                                                                <div class="col-lg-12">
+                                                                        <div method="post" name="login_form">
+                                                                                <p>&nbsp;</p>
+                                                                                <p>&nbsp;</p>
+                                                                                <div class="form-group">
+                                                                                
+                                                                                <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="PhoneHelp" placeholder="Enter Phone Number">
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                
+                                                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                                                </div>
+                                                                            
+                                                                                <p id="validate_message">&nbsp;</p>
+                                                                                <p>&nbsp;</p>
+                                                                                
+                                                                                <button type="submit" class="btn btn-primary btn-round btn-lg" id="login_button" onclick="authenticate()"><b>Get Started</b></button>
+                                                                            </div>
+                                                                </div>
+                                                            </div>
+                                                    
+                                                </div>
+
                        
                 </div>
 

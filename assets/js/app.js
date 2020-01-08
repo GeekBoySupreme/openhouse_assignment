@@ -1,8 +1,8 @@
 var page_param;
 var last_value;
 
-var name="Yoda";
-document.getElementById('user_name').innerHTML=name;
+//var name="Yoda";
+//document.getElementById('user_name').innerHTML=name;
 
 //controlling page tabs visibility for onboarding
 function changepage(page_param)
@@ -14,35 +14,21 @@ function changepage(page_param)
                 document.getElementById("page_2").style.display="block";
                 document.getElementById("page_3").style.display="none";
                 document.getElementById("page_4").style.display="none";
-                document.getElementById("page_5").style.display="none";
-        break;
+                break;
 
         case 3:
                 document.getElementById("page_1").style.display="none";
                 document.getElementById("page_2").style.display="none";
                 document.getElementById("page_3").style.display="block";
                 document.getElementById("page_4").style.display="none";
-                document.getElementById("page_5").style.display="none";
-        break;
+                break;
 
         case 4:
                 document.getElementById("page_1").style.display="none";
                 document.getElementById("page_2").style.display="none";
                 document.getElementById("page_3").style.display="none";
                 document.getElementById("page_4").style.display="block";
-                document.getElementById("page_5").style.display="none";
-        break;
-
-        case 5:
-                document.getElementById("page_1").style.display="none";
-                document.getElementById("page_2").style.display="none";
-                document.getElementById("page_3").style.display="none";
-                document.getElementById("page_4").style.display="none";
-                document.getElementById("page_5").style.display="block";
-
-                showdemo();
-        break;
-         
+                break; 
     }
 }
 
