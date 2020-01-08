@@ -109,7 +109,7 @@ function gettime(timing, subject)
 $('subject_widget_1').click(function()
     {
         document.getElementById('PhysicsMonday').style.display="block";
-    });
+    })
 
 //reveal Date Widget Panel
 function showWidgetPanel()
