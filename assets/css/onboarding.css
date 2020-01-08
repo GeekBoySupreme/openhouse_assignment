@@ -47,6 +47,7 @@ Tab Styles
   overflow: hidden;
   background-color: #ffffff;
   width:100%;
+  margin-left:-6px;
   text-align:center;
 }
 
