@@ -48,7 +48,7 @@ function showdemo()
                     subject.subject_name + '</b></h3>\
                             <h5><b>Fees : Rs.' + subject.fees +
                     '<b></h5>\
-                    <div class="row"\
+                    <div class="row">\
                     <div class="tab col-lg-4">\
                     <div class="tablinks"><b>'+ subject.timing.day_1 +'</b><br>'+ subject.timing.time_1[0] +'</div>'
                     '</div>\
