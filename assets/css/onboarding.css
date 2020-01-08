@@ -52,11 +52,11 @@ Tab Styles
 
 /* Style the div inside the tab */
 .tablinks {
-  background-color: rgb(193, 220, 247);
+  background-color: rgba(81, 160, 240, 0.219);
   color:rgb(19, 88, 156);
   border-radius:3px;
   width:33.33%;
-  margin:2px;
+  margin:1px;
   text-align:left;
   border: none;
   outline: none;
