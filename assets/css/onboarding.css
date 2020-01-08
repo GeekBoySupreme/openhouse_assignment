@@ -66,3 +66,8 @@ Tab Styles
   transition: 0.3s;
   font-size: 20px;
 }
+
+.widget_panel
+{
+  display:none;
+}
