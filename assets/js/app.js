@@ -54,9 +54,9 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks"  onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks"  onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks"  onclick="'+ showWidgetPanel(subject_id_3,subject_id_1,subject_id_2) +'"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks" id="subject_widget_1"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="subject_widget_2"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks" id="subject_widget_3"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
                     \
                     <div id="'+ subject_id_1 +'" class="widget_panel">\
@@ -104,11 +104,18 @@ function gettime(timing, subject)
 //reveal Date Widget Panel
 function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3)
 {
-    document.getElementById(widget_id_1).style.display="block";
-    document.getElementById(widget_id_2).style.display="none";
-    document.getElementById(widget_id_3).style.display="none";
+    document.getElementById(subject_id_1).style.display="block";
+    document.getElementById(subject_id_2).style.display="none";
+    document.getElementById(subject_id_3).style.display="none";
     
 }
+
+('#subject_widget_1').click(function()
+{
+    document.getElementById(subject_id_1).style.display="block";
+    document.getElementById(subject_id_2).style.display="none";
+    document.getElementById(subject_id_3).style.display="none";
+});
 
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key)
