@@ -44,6 +44,7 @@ function showdemo()
                     var subject_id_1 = subject.subject_name + subject.timing.batch_1[0];
                     var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
+                    console.log(subject.subject_name);
 
                     sub_1=subject_id_1;
 
