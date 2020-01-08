@@ -3,26 +3,18 @@
         "subject_name":"Physics",
         "fees":1000,
         "timing": {
-            "day_1":"Monday",
-            "time_1":["10:30AM", "2:00PM"],
-            "day_2":"Wednesday",
-            "time_2":["10:30AM", "1:00PM", "5:00PM"],
-            "day_3":"Thursday",
-            "time_3":["10:30AM", "1:00PM"]
-
+            "batch_1":["Monday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"],
+            "batch_2":["Tuesday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"],
+            "batch_3":["Sunday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"]
         }
     },
     {
         "subject_name":"English",
         "fees":1000,
         "timing": {
-            "day_1":"Monday",
-            "time_1":["10:30AM"],
-            "day_2":"Tuesday",
-            "time_2":["10:30AM", "1:00PM", "5:00PM"],
-            "day_3":"Saturday",
-            "time_3":["10:30AM", "1:00PM"]
-
+            "batch_1":["Monday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"],
+            "batch_2":["Tuesday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"],
+            "batch_3":["Sunday", "10:30AM", "Jan 09", "Jan 16", "Jan 25"]
         }
     }
 

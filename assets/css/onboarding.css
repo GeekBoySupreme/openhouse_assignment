@@ -54,6 +54,7 @@ Tab Styles
 /* Style the div inside the tab */
 .tablinks {
   background-color: inherit;
+  width:33.33%;
   float: left;
   border: none;
   outline: none;

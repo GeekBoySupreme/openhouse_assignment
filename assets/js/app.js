@@ -50,17 +50,9 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_1 +'</b></div>'+
-                    gettime(subject.timing.time_1, subject.timing.day_1, subject.subject_name)+
-                    '</div>\
-                    <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_2 +'</b></div>'+
-                    gettime(subject.timing.time_2, subject.timing.day_2, subject.subject_name)+
-                    '</div>\
-                    <div class="tab">\
-                    <div class="tablinks"><b>'+ subject.timing.day_3 +'</b></div>'+
-                    gettime(subject.timing.time_3, subject.timing.day_3, subject.subject_name)+
-                    '</div>\
+                    <button class="tablinks"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                         </div>\
                     </div>\
                 </div>';
