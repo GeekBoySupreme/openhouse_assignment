@@ -28,7 +28,7 @@ function changepage(page_param)
                 document.getElementById("page_2").style.display="none";
                 document.getElementById("page_3").style.display="none";
                 document.getElementById("page_4").style.display="block";
-                break; 
+                break;
     }
 }
 
@@ -38,7 +38,7 @@ var sub_1, sub_2, sub_3;
 function showdemo()
 {
         document.getElementById('container-subject').innerHTML='';
-    
+
                 function getTemplate(subject) {
 
                     var subject_id_1 = subject.subject_name + subject.timing.batch_1[0];
@@ -57,7 +57,7 @@ function showdemo()
                     '<b></h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="subject_widget_1"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks" id="subject_widget_1" onclick="alert("Clicked")"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
                     <button class="tablinks" id="subject_widget_2"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
                     <button class="tablinks" id="subject_widget_3"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
@@ -76,11 +76,11 @@ function showdemo()
                 </div>';
                     return template;
                 }
-               
-                //This URL can be replaced with the Endpoint that would serve a JSON 
+
+                //This URL can be replaced with the Endpoint that would serve a JSON
                 var queryUrl='https://openhouseparent.netlify.com/subject_details.json';
 
-    
+
                 var html = '';
                 $.getJSON(queryUrl, function (subjects) {
                 subjects.forEach(function (subject) {
@@ -89,8 +89,8 @@ function showdemo()
                 $('#container-subject').append(html);
             });
 
-        
-        
+
+
 }
 
 var key=0;
@@ -140,7 +140,7 @@ function sendToServer()
 {
     //Redirecting to Success Page
     window.location = 'appointment.html', true;//disable to see the json data being dumped in console
-    
+
     //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
