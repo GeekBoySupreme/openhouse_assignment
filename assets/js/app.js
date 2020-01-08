@@ -106,9 +106,9 @@ function gettime(timing, subject)
     return code;
 }
 
-function showWidgetPanel(subject, day)
+function showWidgetPanel(widget_id)
 {
-  document.getElementById(subject+day).style.display="none";
+  document.getElementById(widget_id).style.display="none";
 }
 
 //Sends data to Validation Form
