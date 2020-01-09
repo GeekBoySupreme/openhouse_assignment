@@ -148,7 +148,8 @@ function addToConfirmation(subject, day, time, date, key, evt)
     //pill.style.color="#ffffff";
 
     var subject_id=subject+"_0";
-    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ subject +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
+    var sub_param="'"+subject+"'";
+    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
     jsonBuilder(subject, day, time, date);
