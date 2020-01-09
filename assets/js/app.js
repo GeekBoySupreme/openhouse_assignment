@@ -160,8 +160,21 @@ function addToConfirmation(subject, day, time, date, key, evt)
 
 function removeFromDump(another_parameter)
 {
-    another_parameter+="_0"
-    document.getElementById(another_parameter).style.display="none";
+    //Removing from List
+    another_parameter_1=another_parameter+"_0";
+    document.getElementById(another_parameter_1).style.display="none";
+
+    //Removing Active from Pill
+    date_pill = document.getElementsByClassName(another_parameter+"_1");
+    for (var i = 0; i < date_pill.length; i++) {
+      date_pill[i].className = date_pill[i].className.replace(" active", "");
+    }
+
+    //Removing Active from Tablink
+    date_pill = document.getElementsByClassName(another_parameter);
+    for (var i = 0; i < date_pill.length; i++) {
+      date_pill[i].className = date_pill[i].className.replace(" active", "");
+    }
 }
 
 
