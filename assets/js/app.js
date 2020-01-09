@@ -205,7 +205,8 @@ function removeFromDump(another_parameter, keyid, hold)
 {
     //Removing from List
     another_parameter_1=another_parameter+"_0"+keyid+hold;
-    document.getElementById(another_parameter_1).style.display="none";
+    //document.getElementById(another_parameter_1).style.display="none";
+    document.getElementById(another_parameter_1).remove();
 
     //Removing Active from Pill
     date_pill = document.getElementsByClassName(another_parameter+"_1");
