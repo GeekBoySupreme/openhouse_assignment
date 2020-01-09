@@ -45,9 +45,7 @@ function showdemo()
                     var subject_id_2 = subject.subject_name + subject.timing.batch_2[0];
                     var subject_id_3 = subject.subject_name + subject.timing.batch_3[0];
 
-                    batch_time_1="'"+subject.timing.batch_1[1]+"'";
-                    batch_time_2="'"+subject.timing.batch_2[1]+"'";
-                    batch_time_3="'"+subject.timing.batch_3[1]+"'";
+                    var just_subject="'"+subject.subject_name+"'"
 
                     sub_1="'"+subject_id_1+"'";
                     sub_2="'"+subject_id_2+"'";
@@ -63,9 +61,9 @@ function showdemo()
                     '</h5>\
                     \
                     <div class="tab">\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+sub_1+','+sub_2+','+sub_3+',event)"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'" onclick="showWidgetPanel('+sub_2+','+sub_1+','+sub_3+',event)"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    <button class="tablinks" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'" onclick="showWidgetPanel('+sub_3+','+sub_2+','+sub_1+',event)"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
+                    <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_1+','+sub_2+','+sub_3+',event)"><b>'+ subject.timing.batch_1[0] +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
+                    <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_2+','+sub_1+','+sub_3+',event)"><b>'+ subject.timing.batch_2[0] +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
+                    <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_3+','+sub_2+','+sub_1+',event)"><b>'+ subject.timing.batch_3[0] +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
                     \
                     <div id="'+ subject_id_1 +'" class="widget_panel">\
@@ -113,10 +111,10 @@ function gettime(timing, subject)
 }
 
 //Shows widget panel
-function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3, evt)
+function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 {
     var tablinks, i
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName(subject);
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
