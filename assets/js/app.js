@@ -187,9 +187,9 @@ function addToConfirmation(subject, day, time, date, key, evt)
     //pill.style.background="#fc6666";
     //pill.style.color="#ffffff";
 
-    var subject_id=subject+"_0";
+    var subject_id=subject+"_0"+key;
     var sub_param="'"+subject+"'";
-    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
+    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', key)" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
     jsonBuilder(subject, day, time, date);
@@ -198,10 +198,10 @@ function addToConfirmation(subject, day, time, date, key, evt)
 
 }
 
-function removeFromDump(another_parameter)
+function removeFromDump(another_parameter, keyid)
 {
     //Removing from List
-    another_parameter_1=another_parameter+"_0";
+    another_parameter_1=another_parameter+"_0"+keyid;
     document.getElementById(another_parameter_1).style.display="none";
 
     console.log(another_parameter);
