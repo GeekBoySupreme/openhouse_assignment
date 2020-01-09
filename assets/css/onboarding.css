@@ -55,7 +55,7 @@ Tab Styles
 .tab button {
   background-color: rgb(28, 28, 29);
   color:rgb(15, 135, 255);
-  border-radius:3px;
+  border-radius:10px;
   width:32%;
   margin:1px;
   text-align:left;
@@ -68,7 +68,7 @@ Tab Styles
 }
 
 .tab button.active {
-  background-color: rgb(11, 75, 139);
+  background-color: rgb(30, 112, 194);
   color:white;
 }
 
