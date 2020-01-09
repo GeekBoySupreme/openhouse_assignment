@@ -42,31 +42,31 @@ function formatcode(day_name)
     {
         case "Monday":
             day_truncate="Mon";
-            icon='<i class="fas fa-biking"></i>';
+            icon='<i class="fa fa-biking"></i>';
         break;
         case "Tuesday":
             day_truncate="Tue";
-            icon='<i class="fas fa-hiking"></i>';
+            icon='<i class="fa fa-hiking"></i>';
         break;
         case "Wednesday":
             day_truncate="Wed";
-            icon='<i class="fas fa-shoe-prints"></i>';
+            icon='<i class="fa fa-shoe-prints"></i>';
         break;
         case "Thursday":
             day_truncate="Thu";
-            icon='<i class="fas fa-skiing"></i>';
+            icon='<i class="fa fa-skiing"></i>';
         break;
         case "Friday":
             day_truncate="Fri";
-            icon='<i class="fas fa-skating"></i>';
+            icon='<i class="fa fa-skating"></i>';
         break;
         case "Saturday":
             day_truncate="Sat";
-            icon='<i class="fas fa-running"></i>';
+            icon='<i class="fa fa-running"></i>';
         break;
         case "Sunday":
             day_truncate="Sun";
-            icon='<i class="fas fa-bicycle"></i>';
+            icon='<i class="fa fa-bicycle"></i>';
         break;
     }
 
