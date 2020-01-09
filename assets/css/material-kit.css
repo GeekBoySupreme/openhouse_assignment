@@ -5561,7 +5561,7 @@ button.close {
 }
 
 .modal-backdrop.show {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 .modal-header {
@@ -5574,7 +5574,7 @@ button.close {
 
 .modal-header .close {
     padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
+    margin: -1rem -1rem -1rem -1.25rem;
     float:left;
 }
 
@@ -15291,7 +15291,7 @@ h2.title {
 
 .modal-dialog .modal-header {
     border-bottom: none;
-    padding-top: 24px;
+    padding-top: 60px;
     padding-right: 24px;
     padding-bottom: 0;
     padding-left: 24px;
@@ -15336,7 +15336,8 @@ h2.title {
 }
 
 .modal .modal-dialog {
-    margin-top: 100px;
+    margin-top: 0px;
+    min-height:300px;
 }
 
 .modal .modal-dialog.modal-login {
