@@ -113,7 +113,7 @@ function showdemo()
                     '+ gettime(subject.timing.batch_2, subject.subject_name) +'\
                     </div>\
                     <div id="'+ subject_id_3 +'" class="widget_panel">\
-                    '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
+                    '+ gettime(subject.timing.batch_3, subject.subject_name) +'\
                     </div>\
                     </div>\
                 </div>\
@@ -177,8 +177,7 @@ function addToConfirmation(subject, day, time, date, key, evt)
     }
 
     evt.currentTarget.className += " active";
-    
-    console.log(key);
+
     html='';
 
     //var pill_id = subject+"/"+day+key;
@@ -205,7 +204,6 @@ function removeFromDump(another_parameter, keyid)
     another_parameter_1=another_parameter+"_0"+keyid;
     document.getElementById(another_parameter_1).style.display="none";
 
-    console.log(another_parameter);
     //Removing Active from Pill
     date_pill = document.getElementsByClassName(another_parameter+"_1");
     for (var i = 0; i < date_pill.length; i++) {
