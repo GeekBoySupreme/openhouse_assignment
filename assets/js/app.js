@@ -167,6 +167,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
   document.getElementById(widget_id_3).style.display="none";
 }
 
+var holder=0;
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key, evt)
 {
@@ -186,22 +187,23 @@ function addToConfirmation(subject, day, time, date, key, evt)
     //pill.style.background="#fc6666";
     //pill.style.color="#ffffff";
 
-    var subject_id=subject+"_0"+key;
+    var subject_id=subject+"_0"+key+holder;
     var sub_param="'"+subject+"'";
     var keyid="'"+key+"'";
-    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
+    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +', holder)" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
     jsonBuilder(subject, day, time, date);
 
+    holder++;
     return false;
 
 }
 
-function removeFromDump(another_parameter, keyid)
+function removeFromDump(another_parameter, keyid, hold)
 {
     //Removing from List
-    another_parameter_1=another_parameter+"_0"+keyid;
+    another_parameter_1=another_parameter+"_0"+keyid+hold;
     document.getElementById(another_parameter_1).style.display="none";
 
     //Removing Active from Pill
