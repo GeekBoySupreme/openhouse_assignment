@@ -178,7 +178,7 @@ function addToConfirmation(subject, day, time, date, key, evt)
 
     evt.currentTarget.className += " active";
     
-    
+    console.log(key);
     html='';
 
     //var pill_id = subject+"/"+day+key;
