@@ -201,7 +201,7 @@ function addToConfirmation(subject, day, time, date, key, evt)
 function removeFromDump(another_parameter, keyid)
 {
     //Removing from List
-    another_parameter_1=another_parameter+"_0"+keyid;
+    another_parameter_1=another_parameter+keyid+"_0";
     document.getElementById(another_parameter_1).style.display="none";
 
     console.log(another_parameter);
