@@ -104,7 +104,7 @@ function gettime(timing, subject)
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-primary btn-round time_pill '+ subject +'" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +')">'+ timing[i] +'</button>';
+        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +', event)">'+ timing[i] +'</button>';
         key++;
     }
     return code;
@@ -113,7 +113,7 @@ function gettime(timing, subject)
 //Shows widget panel
 function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 {
-    var tablinks, i
+    var tablinks, i;
     tablinks = document.getElementsByClassName(subject);
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -128,15 +128,24 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 }
 
 //Sends data to Validation Form
-function addToConfirmation(subject, day, time, date, key)
+function addToConfirmation(subject, day, time, date, key, evt)
 {
+    var date_pill, i;
+    date_pill = document.getElementsByClassName(subject+"_1");
+    for (i = 0; i < date_pill.length; i++) {
+      date_pill[i].className = date_pill[i].className.replace(" active", "");
+    }
+
+    evt.currentTarget.className += " active";
+    
+    
     html='';
 
     var pill_id = subject+"/"+day+key;
     var pill = document.getElementById(pill_id);
 
-    pill.style.background="#fc6666";
-    pill.style.color="#ffffff";
+    //pill.style.background="#fc6666";
+    //pill.style.color="#ffffff";
 
     html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
