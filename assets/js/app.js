@@ -104,7 +104,7 @@ function gettime(timing, subject)
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +', event)">'+ timing[i] +'</button>';
+        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +', event)"><b>'+ timing[i] +'</b></button>';
         key++;
     }
     return code;
@@ -141,13 +141,14 @@ function addToConfirmation(subject, day, time, date, key, evt)
     
     html='';
 
-    var pill_id = subject+"/"+day+key;
-    var pill = document.getElementById(pill_id);
+    //var pill_id = subject+"/"+day+key;
+    //var pill = document.getElementById(pill_id);
 
     //pill.style.background="#fc6666";
     //pill.style.color="#ffffff";
 
-    html='<div id='+ subject +'><h4 class="description">'+ subject+'</h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
+    var none="'none'";
+    html='<div id='+ subject +'><h4 class="description">'+ subject+'<span onclick="this.parentElement.style.display='+none+'" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5></div><p>&nbsp;</p>';
 
     document.getElementById("schedule_container").innerHTML += html;
     jsonBuilder(subject, day, time, date);

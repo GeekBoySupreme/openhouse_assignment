@@ -84,6 +84,12 @@ Tab Styles
   color:white;
 }
 
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .widget_panel
 {
   text-align:justify;
