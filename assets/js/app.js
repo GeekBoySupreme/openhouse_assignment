@@ -118,10 +118,10 @@ function showWidgetPanel(widget_id_1, widget_id_2, widget_id_3, evt)
     var tablinks, i
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active_button", "");
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    evt.currentTarget.className += " active_button";
+    evt.currentTarget.className += " active";
 
 
   document.getElementById(widget_id_1).style.display="block";

@@ -67,7 +67,7 @@ Tab Styles
   font-size: 20px;
 }
 
-.active_button {
+.tab button.active {
   background-color: rgba(0,101,202);
   color:white;
 }
