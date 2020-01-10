@@ -139,12 +139,21 @@ function showdemo()
 
 var key=0;
 
+//Storing Subjects in an array. Declaring a Static Array Here, but we can also write a simple loop to count the number of 
+//subjects m,entioned in the input json. 
+//The array will have one row per subject
+var subject_store;
+var subject_store_key = 0;
+subject_store[0][0]=["Physics"][""];
+subject_store[1][0]=["English"][""];
+
+
 function gettime(timing, subject)
 {
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +', event)"><b>'+ timing[i] +'</b></button>';
+        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToCheckout('+ parameters +', event)"><b>'+ timing[i] +'</b></button>';
         key++;
     }
     return code;
@@ -169,7 +178,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 
 var holder=0;
 //Sends data to Validation Form
-function addToConfirmation(subject, day, time, date, key, evt)
+function addToCheckout(subject, day, time, date, key, evt)
 {
     var date_pill, i;
     date_pill = document.getElementsByClassName(subject+"_1");
@@ -193,12 +202,49 @@ function addToConfirmation(subject, day, time, date, key, evt)
     var hold_pill=holder;
     html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
 
-    document.getElementById("schedule_container").innerHTML += html;
-    jsonBuilder(subject, day, time, date);
+
+    //document.getElementById("schedule_container").innerHTML += html;
+    //jsonBuilder(subject, day, time, date);
+    for(var z=0; z<subject_store_key; z++)
+    {
+        if(subject_store[z][0]==subject){
+            subject_store[z][1] = html;
+            subject_store[z][2] = day;
+            subject_store[z][3] = time;
+            subject_store[z][4] = date;
+
+            break;
+        }
+    }
+
+      
+    //subject_store[subject_store_key][0] = subject;
+    //subject_store[subject_store_key][1] = html;
+
+    //subject_store_key++;
 
     holder++;
     return false;
 
+}
+
+function createSchedule()
+{
+    for(var z=0; z<subject_store_key; z++){
+        if(subject_store[z][1]!=""){
+            jsonBuilder(subject_store[z][0], subject_store[z][2], subject_store[z][3], subject_store[z][4]);
+        }
+    }
+    sendToServer();
+}
+
+//Rendering View on the Checkout page
+function renderCheckout()
+{
+    var render_block = document.getElementById("schedule_container");
+    for(var j=0; j<subject_store_key; j++){
+        render_block.innerHTML += subject_store[subject_store_key][1];
+    }
 }
 
 function removeFromDump(another_parameter, keyid, hold)
@@ -208,6 +254,15 @@ function removeFromDump(another_parameter, keyid, hold)
     //document.getElementById(another_parameter_1).style.display="none";
     var element = document.getElementById(another_parameter_1);
     element.parentNode.removeChild(element);
+
+    for(var z=0; z<2; z++){
+        if(subject_store[z][0]==another_parameter){
+            subject_store[z][1]=="";
+            subject_store[z][2]=="";
+            subject_store[z][3]=="";
+            subject_store[z][4]=="";
+        }
+    }
 
     //Removing Active from Pill
     date_pill = document.getElementsByClassName(another_parameter+"_1");
