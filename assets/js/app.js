@@ -1,5 +1,6 @@
 var page_param;
 var last_value;
+var subject_dump_tracker = new Array(1);
 
 //var name="Yoda";
 //document.getElementById('user_name').innerHTML=name;
@@ -75,9 +76,11 @@ function formatcode(day_name)
 }
 
 //fetches the json and renders data in the page
+var sub_counter=0;
 function showdemo()
 {
-        document.getElementById('container-subject').innerHTML='';
+        
+    document.getElementById('container-subject').innerHTML='';
 
                 function getTemplate(subject) {
 
@@ -118,6 +121,7 @@ function showdemo()
                     </div>\
                 </div>\
                 </div>';
+
                     return template;
                 }
 
@@ -133,8 +137,15 @@ function showdemo()
                 $('#container-subject').append(html);
             });
 
+}
 
-
+//Updating Subject Tracker with new valid Time Slots
+function updateSubjectTracker(param1, param2){
+    for(var i=0; i<subject_tracker.length; i+2)
+    {
+        if(subject_tracker[i].toLowerCase()==param1.toLowerCase())
+            subject_tracker[i+1] = param2;
+    }
 }
 
 var key=0;
@@ -171,6 +182,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
   document.getElementById(widget_id_3).style.display="none";
 }
 
+
 var holder=0;
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key, evt)
@@ -195,23 +207,29 @@ function addToConfirmation(subject, day, time, date, key, evt)
     var sub_param="'"+subject+"'";
     var keyid="'"+key+"'";
     var hold_pill=holder;
-    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
+    html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeToDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
+
+    updateSubjectTracker(subject, subject_id);
 
     document.getElementById("schedule_container").innerHTML += html;
-    jsonBuilder(subject, day, time, date);
+    jsonBuilder(subject, day, time, date, subject_id);
 
     holder++;
     return false;
 
 }
 
-function removeFromDump(another_parameter, keyid, hold)
+function removeToDump(another_parameter, keyid, hold)
 {
     //Removing from List
     another_parameter_1=another_parameter+"_0"+keyid+hold;
+    subject_dump_tracker.push(another_parameter_1);
+
     //document.getElementById(another_parameter_1).style.display="none";
     var element = document.getElementById(another_parameter_1);
     element.parentNode.removeChild(element);
+
+
 
     //Removing Active from Pill
     date_pill = document.getElementsByClassName(another_parameter+"_1");
@@ -232,6 +250,12 @@ function sendToServer()
 {
     //Redirecting to Success Page
     //window.location = 'appointment.html', true;//disable to see the json data being dumped in console
+    for(var a=0; a<timeslots.length; a++)
+    {
+        if(subject_dump_tracker.indexOf(timeslots[a]).subject_id!=-1)
+            timeslots.splice(a,1);
+    }
+    
 
     //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -254,7 +278,7 @@ var timeslots = []
 schedule.timeslots = timeslots;
 
 //builds the json with preferred timeslots
-function jsonBuilder(subject, day, time, date)
+function jsonBuilder(subject, day, time, date, subjectid)
 {
     var subject_name = subject;
     var day_of_week = day;
@@ -262,6 +286,7 @@ function jsonBuilder(subject, day, time, date)
     var date_class = date;
 
     var slot={
+        "subject_id": subjectid,
         "subject_name": subject_name,
         "day_of_week": day_of_week,
         "timeslot":timeslot,
