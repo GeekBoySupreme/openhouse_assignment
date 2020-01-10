@@ -212,7 +212,8 @@ function addToCheckout(subject, day, time, date, key, evt)
             subject_store[z][2] = day;
             subject_store[z][3] = time;
             subject_store[z][4] = date;
-
+            console.log(subject);
+            console.log(html);
             break;
         }
     }
