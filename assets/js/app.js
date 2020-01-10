@@ -260,6 +260,9 @@ function sendToServer()
   .then(response => response.json())
   .then(json => console.log(json))
   //dumping json in console to validate. Won't be visible as window.location is set
+
+  subject_dump_tracker = new Array(0);
+  
 }
 
 
