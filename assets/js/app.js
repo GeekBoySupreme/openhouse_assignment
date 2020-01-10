@@ -186,6 +186,7 @@ function addToConfirmation(subject, day, time, date, key, evt)
     }
 
     evt.currentTarget.className += " active";
+    //document.getElementById(subject+"/"+day+key).disabled = true;
 
     html='';
 
@@ -245,7 +246,7 @@ function sendToServer()
 
     for(var a=0; a<schedule.timeslots.length; a++)
     {
-        if(subject_dump_tracker.indexOf(schedule.timeslots[a]).subject_id!=-1)
+        if(subject_dump_tracker.indexOf((schedule.timeslots[a]).subject_id)!=-1)
             schedule.timeslots.splice(a,1);
     }
     
