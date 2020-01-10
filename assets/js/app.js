@@ -183,18 +183,14 @@ function addToConfirmation(subject, day, time, date, key, evt)
     date_pill = document.getElementsByClassName(subject+"_1");
     for (i = 0; i < date_pill.length; i++) {
       date_pill[i].className = date_pill[i].className.replace(" active", "");
+      date_pill.disabled=false;
     }
 
     evt.currentTarget.className += " active";
-    //document.getElementById(subject+"/"+day+key).disabled = true;
+    document.getElementById(subject+"/"+day+key).disabled = true;
 
     html='';
 
-    //var pill_id = subject+"/"+day+key;
-    //var pill = document.getElementById(pill_id);
-
-    //pill.style.background="#fc6666";
-    //pill.style.color="#ffffff";
 
     var subject_id=subject+"_0"+key+holder;
     var sub_param="'"+subject+"'";
@@ -248,6 +244,7 @@ function sendToServer()
     {
         if(subject_dump_tracker.indexOf((schedule.timeslots[a]).subject_id)!=-1)
             schedule.timeslots.splice(a,1);
+
     }
     
 
@@ -271,14 +268,7 @@ function sendToServer()
 
 //To Build Final Information JSON
 var schedule = {};
-var timeslots = [{
-    "subject_id": 00,
-    "subject_name": 00,
-    "day_of_week": 00,
-    "timeslot": 00,
-    "date": 00,
-    "username": 00
-}]
+var timeslots = []
 schedule.timeslots = timeslots;
 
 //builds the json with preferred timeslots
