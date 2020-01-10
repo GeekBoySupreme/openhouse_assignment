@@ -1,7 +1,7 @@
 var page_param;
 var last_value;
 
-//var name="Yoda";
+var name="Yoda";
 //document.getElementById('user_name').innerHTML=name;
 
 //controlling page tabs visibility for onboarding
@@ -251,8 +251,8 @@ function renderCheckout()
     console.log("Rendering Checkout");
     var render_block = document.getElementById("schedule_container");
     for(var j=0; j<subject_store_key; j++){
-        console.log(subject_store[subject_store_key][1]);
-        render_block.innerHTML += subject_store[subject_store_key][1];
+        console.log(subject_store[j][1]);
+        render_block.innerHTML += subject_store[j][1];
     }
 }
 
