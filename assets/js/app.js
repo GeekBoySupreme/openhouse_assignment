@@ -1,7 +1,7 @@
 var page_param;
 var last_value;
 
-var name="Yoda";
+//var name="Yoda";
 //document.getElementById('user_name').innerHTML=name;
 
 //controlling page tabs visibility for onboarding
@@ -142,22 +142,13 @@ var key=0;
 //Storing Subjects in an array. Declaring a Static Array Here, but we can also write a simple loop to count the number of 
 //subjects m,entioned in the input json. 
 //The array will have one row per subject
-var subject_store = new Array(2);
-var subject_store_key = 0;
-for(var q=0; q<2; q++){
-    subject_store[q]= new Array(5);
-}
-
-subject_store[0][0]=["Physics"];
-subject_store[1][0]=["English"];
-
 
 function gettime(timing, subject)
 {
     var code='';
     for(var i=2; i<timing.length; i++){
         var parameters="'"+subject+"','"+timing[0]+"','"+timing[1]+"','"+timing[i]+"','"+key+"'";
-        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToCheckout('+ parameters +', event)"><b>'+ timing[i] +'</b></button>';
+        code +='<button class="btn btn-round time_pill '+ subject +'_1" id="'+ subject +'/'+ timing[0] + key +'" onclick="addToConfirmation('+ parameters +', event)"><b>'+ timing[i] +'</b></button>';
         key++;
     }
     return code;
@@ -182,7 +173,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 
 var holder=0;
 //Sends data to Validation Form
-function addToCheckout(subject, day, time, date, key, evt)
+function addToConfirmation(subject, day, time, date, key, evt)
 {
     var date_pill, i;
     date_pill = document.getElementsByClassName(subject+"_1");
@@ -206,52 +197,12 @@ function addToCheckout(subject, day, time, date, key, evt)
     var hold_pill=holder;
     html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
 
-    //console.log(subject);
-    //console.log(html);
-
-    //document.getElementById("schedule_container").innerHTML += html;
-    //jsonBuilder(subject, day, time, date);
-            subject_store[subject_store_key][1] = html;
-            subject_store[subject_store_key][2] = day;
-            subject_store[subject_store_key][3] = time;
-            subject_store[subject_store_key][4] = date;
-            //console.log(subject);
-            //console.log(html);
-        
-
-      
-    //subject_store[subject_store_key][0] = subject;
-    //subject_store[subject_store_key][1] = html;
-
-    subject_store_key++;
+    document.getElementById("schedule_container").innerHTML += html;
+    jsonBuilder(subject, day, time, date);
 
     holder++;
     return false;
 
-}
-
-function createSchedule()
-{
-    //Creating Schedule
-    for(var z=0; z<2; z++){
-        if(subject_store[z][1]!=""){
-            console.log(subject_store[z][0]+" "+ subject_store[z][2]+" "+ subject_store[z][3])
-            jsonBuilder(subject_store[z][0], subject_store[z][2], subject_store[z][3], subject_store[z][4]);
-        }
-    }
-    sendToServer();
-}
-
-//Rendering View on the Checkout page
-function renderCheckout()
-{
-    console.log("Rendering Checkout");
-    var render_block = document.getElementById("schedule_container");
-    console.log(render_block);
-    for(var v=0; v<2; v++){
-        console.log(000);
-        render_block.innerHTML += subject_store[v][1];
-    }
 }
 
 function removeFromDump(another_parameter, keyid, hold)
@@ -261,15 +212,6 @@ function removeFromDump(another_parameter, keyid, hold)
     //document.getElementById(another_parameter_1).style.display="none";
     var element = document.getElementById(another_parameter_1);
     element.parentNode.removeChild(element);
-
-    for(var z=0; z<2; z++){
-        if(subject_store[z][0]==another_parameter){
-            subject_store[z][1]=="";
-            subject_store[z][2]=="";
-            subject_store[z][3]=="";
-            subject_store[z][4]=="";
-        }
-    }
 
     //Removing Active from Pill
     date_pill = document.getElementsByClassName(another_parameter+"_1");
@@ -289,7 +231,7 @@ function removeFromDump(another_parameter, keyid, hold)
 function sendToServer()
 {
     //Redirecting to Success Page
-    //window.location = 'appointment.html', true;//disable to see the json data being dumped in console
+    window.location = 'appointment.html', true;//disable to see the json data being dumped in console
 
     //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
