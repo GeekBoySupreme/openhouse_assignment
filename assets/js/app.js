@@ -139,14 +139,6 @@ function showdemo()
 
 }
 
-//Updating Subject Tracker with new valid Time Slots
-function updateSubjectTracker(param1, param2){
-    for(var i=0; i<subject_tracker.length; i+2)
-    {
-        if(subject_tracker[i].toLowerCase()==param1.toLowerCase())
-            subject_tracker[i+1] = param2;
-    }
-}
 
 var key=0;
 
