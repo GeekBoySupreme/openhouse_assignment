@@ -201,16 +201,15 @@ function addToConfirmation(subject, day, time, date, key, evt)
     var hold_pill=holder;
     html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeToDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
     
-    for(var z=0; z<render_doc.length; z++)
-    {
-        if(subject.indexOf(render_doc[z])){
-            var pos = subject.indexOf(render_doc[z]);
-            render_doc.splice(pos+1,1,html);
+    if(render_doc.includes(subject)){
+        for(var z=0; z<render_doc.length; z++){
+            if(render_doc[z]==subject)
+            render_doc.splice(z+1,1,html);
         }
-        else{
-            render_doc.push(subject);
-            render_doc.push(html);
-        }
+    }
+    else{
+        render_doc.push(subject);
+        render_doc.push(html);
     }
     
     jsonBuilder(subject, day, time, date, subject_id);
