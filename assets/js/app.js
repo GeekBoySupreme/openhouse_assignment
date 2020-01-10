@@ -202,6 +202,8 @@ function addToCheckout(subject, day, time, date, key, evt)
     var hold_pill=holder;
     html='<div id='+ subject_id +'><h4 class="description">'+ subject+'<span onclick="removeFromDump('+ sub_param +', '+ keyid +', '+ hold_pill +')" class="topright">&times</span></h4><h5>'+day+' '+time +'<br>' + date + '</h5><p>&nbsp;</p></div>';
 
+    console.log(subject);
+            console.log(html);
 
     //document.getElementById("schedule_container").innerHTML += html;
     //jsonBuilder(subject, day, time, date);
