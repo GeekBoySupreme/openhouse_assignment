@@ -240,6 +240,7 @@ function sendToServer()
 {
     //Redirecting to Success Page
     //window.location = 'appointment.html', true;//disable to see the json data being dumped in console
+    console.log(timeslots);
     console.log(subject_dump_tracker);
 
     for(var a=0; a<schedule.timeslots.length; a++)
@@ -262,7 +263,7 @@ function sendToServer()
   //dumping json in console to validate. Won't be visible as window.location is set
 
   subject_dump_tracker = new Array(0);
-  
+
 }
 
 
