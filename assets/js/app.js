@@ -213,17 +213,13 @@ function addToCheckout(subject, day, time, date, key, evt)
 
     //document.getElementById("schedule_container").innerHTML += html;
     //jsonBuilder(subject, day, time, date);
-    for(var z=0; z<subject_store_key; z++)
-    {
-        if(subject_store[z][0]==subject){
-            subject_store[z][1] = html;
-            subject_store[z][2] = day;
-            subject_store[z][3] = time;
-            subject_store[z][4] = date;
+            subject_store[subject_store_key][1] = html;
+            subject_store[subject_store_key][2] = day;
+            subject_store[subject_store_key][3] = time;
+            subject_store[subject_store_key][4] = date;
             console.log(subject);
             console.log(html);
-            break;
-        }
+        
     }
     console.log(subject_store);
 
