@@ -147,6 +147,8 @@ var subject_store_key = 0;
 subject_store[0][0]=["Physics"][""];
 subject_store[1][0]=["English"][""];
 
+console.log(subject_store[0][0]);
+
 
 function gettime(timing, subject)
 {
