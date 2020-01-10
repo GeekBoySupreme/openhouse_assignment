@@ -240,10 +240,12 @@ function sendToServer()
 {
     //Redirecting to Success Page
     //window.location = 'appointment.html', true;//disable to see the json data being dumped in console
-    for(var a=0; a<timeslots.length; a++)
+    console.log(subject_dump_tracker);
+
+    for(var a=0; a<schedule.timeslots.length; a++)
     {
-        if(subject_dump_tracker.indexOf(timeslots[a]).subject_id!=-1)
-            timeslots.splice(a,1);
+        if(subject_dump_tracker.indexOf(schedule.timeslots[a]).subject_id!=-1)
+            schedule.timeslots.splice(a,1);
     }
     
 
