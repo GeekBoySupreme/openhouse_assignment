@@ -231,7 +231,7 @@ function removeFromDump(another_parameter, keyid, hold)
 function sendToServer()
 {
     //Redirecting to Success Page
-    window.location = 'appointment.html', true;//disable to see the json data being dumped in console
+    //window.location = 'appointment.html', true;//disable to see the json data being dumped in console
 
     //Sending POST Request to a fake Server - for now
     fetch('https://jsonplaceholder.typicode.com/posts', {
