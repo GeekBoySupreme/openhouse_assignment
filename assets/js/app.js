@@ -176,6 +176,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 
 
 var holder=0;
+var prev_disabled;
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key, evt)
 {
@@ -183,11 +184,13 @@ function addToConfirmation(subject, day, time, date, key, evt)
     date_pill = document.getElementsByClassName(subject+"_1");
     for (i = 0; i < date_pill.length; i++) {
       date_pill[i].className = date_pill[i].className.replace(" active", "");
-      date_pill.disabled=false;
+      $(date_pill).prop('disabled', false);
     }
 
     evt.currentTarget.className += " active";
     document.getElementById(subject+"/"+day+key).disabled = true;
+    //document.getElementById(prev_disabled).disabled = false;
+    //prev_disabled = subject+"/"+day+key;
 
     html='';
 
