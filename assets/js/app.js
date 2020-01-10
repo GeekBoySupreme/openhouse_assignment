@@ -235,8 +235,10 @@ function addToCheckout(subject, day, time, date, key, evt)
 
 function createSchedule()
 {
-    for(var z=0; z<subject_store_key; z++){
+    //Creating Schedule
+    for(var z=0; z<2; z++){
         if(subject_store[z][1]!=""){
+            console.log(subject_store[z][0]+" "+ subject_store[z][2]+" "+ subject_store[z][3])
             jsonBuilder(subject_store[z][0], subject_store[z][2], subject_store[z][3], subject_store[z][4]);
         }
     }
@@ -246,6 +248,7 @@ function createSchedule()
 //Rendering View on the Checkout page
 function renderCheckout()
 {
+    console.log("Rendering Checkout");
     var render_block = document.getElementById("schedule_container");
     for(var j=0; j<subject_store_key; j++){
         render_block.innerHTML += subject_store[subject_store_key][1];
