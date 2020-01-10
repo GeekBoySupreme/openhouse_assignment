@@ -145,7 +145,7 @@ var key=0;
 var subject_store = new Array(2);
 var subject_store_key = 0;
 for(var q=0; q<2; q++){
-    subject_store[i]= new Array(5);
+    subject_store[q]= new Array(5);
 }
 
 subject_store[0][0]=["Physics"];
