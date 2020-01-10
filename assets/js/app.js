@@ -142,10 +142,14 @@ var key=0;
 //Storing Subjects in an array. Declaring a Static Array Here, but we can also write a simple loop to count the number of 
 //subjects m,entioned in the input json. 
 //The array will have one row per subject
-var subject_store;
+var subject_store = new Array(2);
 var subject_store_key = 0;
-subject_store[0][0]=["Physics"][""];
-subject_store[1][0]=["English"][""];
+for(var q=0; q<2; q++){
+    subject_store[i]= new Array(5);
+}
+
+subject_store[0][0]=["Physics"];
+subject_store[1][0]=["English"];
 
 console.log(subject_store[0][0]);
 
