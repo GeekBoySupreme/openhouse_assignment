@@ -176,7 +176,7 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 
 
 var holder=0;
-var render_doc = new Array(0);
+var render_doc = new Array(1);
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key, evt)
 {
