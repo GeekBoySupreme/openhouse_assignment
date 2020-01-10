@@ -251,7 +251,7 @@ function renderCheckout()
     console.log("Rendering Checkout");
     var render_block = document.getElementById("schedule_container");
     for(var j=0; j<subject_store_key; j++){
-        console.log(subject_store[j][1]);
+        console.log(000);
         render_block.innerHTML += subject_store[j][1];
     }
 }
