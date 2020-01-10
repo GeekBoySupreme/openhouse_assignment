@@ -223,7 +223,7 @@ function addToCheckout(subject, day, time, date, key, evt)
     //subject_store[subject_store_key][0] = subject;
     //subject_store[subject_store_key][1] = html;
 
-    //subject_store_key++;
+    subject_store_key++;
 
     holder++;
     return false;
@@ -248,7 +248,7 @@ function renderCheckout()
     console.log("Rendering Checkout");
     var render_block = document.getElementById("schedule_container");
     console.log(render_block);
-    for(var v=0; v<subject_store_key; v++){
+    for(var v=0; v<2; v++){
         console.log(000);
         render_block.innerHTML += subject_store[v][1];
     }
