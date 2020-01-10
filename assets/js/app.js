@@ -1,6 +1,6 @@
 var page_param;
 var last_value;
-var subject_dump_tracker = new Array(1);
+var subject_dump_tracker = new Array(0);
 
 //var name="Yoda";
 //document.getElementById('user_name').innerHTML=name;
