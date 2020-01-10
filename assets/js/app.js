@@ -2,7 +2,7 @@ var page_param;
 var last_value;
 var subject_dump_tracker = new Array(0);
 
-//var name="Yoda";
+var name="Yoda";
 //document.getElementById('user_name').innerHTML=name;
 
 //controlling page tabs visibility for onboarding
@@ -270,7 +270,14 @@ function sendToServer()
 
 //To Build Final Information JSON
 var schedule = {};
-var timeslots = []
+var timeslots = [{
+    "subject_id": 00,
+    "subject_name": 00,
+    "day_of_week": 00,
+    "timeslot": 00,
+    "date": 00,
+    "username": 00
+}]
 schedule.timeslots = timeslots;
 
 //builds the json with preferred timeslots
