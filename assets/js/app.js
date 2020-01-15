@@ -176,7 +176,8 @@ function showWidgetPanel(subject, widget_id_1, widget_id_2, widget_id_3, evt)
 
 
 var holder=0;
-var render_doc = new Array(1);
+var render_doc = new Array(0);
+var rendercount=0;
 //Sends data to Validation Form
 function addToConfirmation(subject, day, time, date, key, evt)
 {
@@ -210,6 +211,7 @@ function addToConfirmation(subject, day, time, date, key, evt)
     else{
         render_doc.push(subject);
         render_doc.push(html);
+        rendercount++;
     }
     
     jsonBuilder(subject, day, time, date, subject_id);
@@ -222,8 +224,10 @@ function addToConfirmation(subject, day, time, date, key, evt)
 function renderCheckout()
 {
     console.log(render_doc);
-    document.getElementById("schedule_container").innerHTML += render_doc[2];
-    document.getElementById("schedule_container").innerHTML += render_doc[4];
+
+    for(var z=1; z<renderCheckout; z++)
+        document.getElementById("schedule_container").innerHTML += render_doc[z];
+    //document.getElementById("schedule_container").innerHTML += render_doc[4];
 }
 
 function removeToDump(another_parameter, keyid, hold)
