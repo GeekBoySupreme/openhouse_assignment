@@ -228,7 +228,7 @@ function renderCheckout()
     var z=0;
         document.getElementById("schedule_container").innerHTML += render_doc;
     //document.getElementById("schedule_container").innerHTML += render_doc[4];
-    }
+    
 }
 
 function removeToDump(another_parameter, keyid, hold)
