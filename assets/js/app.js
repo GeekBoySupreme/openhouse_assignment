@@ -225,9 +225,11 @@ function renderCheckout()
 {
     console.log(render_doc);
 
-    for(var z=1; z<renderCheckout; z++)
+    for(var z=1; z<renderCheckout; z++) {
         document.getElementById("schedule_container").innerHTML += render_doc[z];
+        console.log(render_doc[z]);
     //document.getElementById("schedule_container").innerHTML += render_doc[4];
+    }
 }
 
 function removeToDump(another_parameter, keyid, hold)
