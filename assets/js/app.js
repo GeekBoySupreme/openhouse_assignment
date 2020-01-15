@@ -226,10 +226,7 @@ function renderCheckout()
     console.log(render_doc);
 
     var z=0;
-    
-    for(z=1; z<renderCheckout; z++) {
-        document.getElementById("schedule_container").innerHTML += render_doc[z];
-        console.log(render_doc[z]);
+        document.getElementById("schedule_container").innerHTML += render_doc;
     //document.getElementById("schedule_container").innerHTML += render_doc[4];
     }
 }
