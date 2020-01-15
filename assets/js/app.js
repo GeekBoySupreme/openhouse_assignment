@@ -223,7 +223,8 @@ function renderCheckout()
 {
     console.log(render_doc);
     for(var x=2; x<5; x+2){
-        document.getElementById("schedule_container").innerHTML += render_doc[x];
+        //document.getElementById("schedule_container").innerHTML += render_doc[x];
+        console.log(render_doc[x]);
     }
 }
 
