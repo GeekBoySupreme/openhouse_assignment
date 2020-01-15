@@ -224,6 +224,8 @@ function addToConfirmation(subject, day, time, date, key, evt)
 function renderCheckout()
 {
     console.log(render_doc);
+    document.getElementById("schedule_container").innerHTML = "";
+    
 
     var z=0;
         document.getElementById("schedule_container").innerHTML += render_doc;
