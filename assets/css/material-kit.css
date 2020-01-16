@@ -3195,11 +3195,7 @@ tbody.collapse.show {
     background-color: #2196f3;
 }
 
-.dropdown-item.disabled,
-.dropdown-item:disabled {
-    color: #6c757d;
-    background-color: transparent;
-}
+
 
 .dropdown-menu.show {
     display: block;
@@ -3521,13 +3517,6 @@ tbody.collapse.show {
     box-shadow: none;
 }
 
-.custom-control-input:disabled~.custom-control-label {
-    color: #6c757d;
-}
-
-.custom-control-input:disabled~.custom-control-label::before {
-    background-color: #e9ecef;
-}
 
 .custom-control-label {
     margin-bottom: 0;
@@ -3581,9 +3570,7 @@ tbody.collapse.show {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23ffffff' d='M0 2h4'/%3E%3C/svg%3E");
 }
 
-.custom-checkbox .custom-control-input:disabled:checked~.custom-control-label::before {
-    background-color: rgba(33, 150, 243, 0.5);
-}
+
 
 .custom-checkbox .custom-control-input:disabled:indeterminate~.custom-control-label::before {
     background-color: rgba(33, 150, 243, 0.5);
@@ -9170,8 +9157,6 @@ button:focus {
 .btn,
 .btn.btn-default {
     color: #fff;
-    background-color: #999999;
-    border-color: #999999;
     box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12);
 }
 
