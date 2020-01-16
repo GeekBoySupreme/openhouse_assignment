@@ -72,6 +72,9 @@ Tab Styles
   background-color: rgb(30, 112, 194);
   color:white;
 }
+.widget_panel{
+  text-align:center;
+}
 
 .widget_panel button {
   color: #000;
