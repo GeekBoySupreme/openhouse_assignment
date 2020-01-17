@@ -105,16 +105,16 @@ function showdemo()
                     \
                     <div class="tab">\
                     <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_1[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_1+','+sub_2+','+sub_3+',event)"><b>'+ formatcode(subject.timing.batch_1[0]) +'<br><br>'+ subject.timing.batch_1[1] +'</b></button>\
-                    <div id="'+ subject_id_1 +'" class="widget_panel"><h6 id="description">Pick a date</h6>\
+                    <div id="'+ subject_id_1 +'" class="widget_panel">\
                     '+ gettime(subject.timing.batch_1, subject.subject_name) +'\
                     </div>\
                     <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_2[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_2+','+sub_1+','+sub_3+',event)"><b>'+ formatcode(subject.timing.batch_2[0]) +'<br><br>'+ subject.timing.batch_2[1] +'</b></button>\
-                    \<div id="'+ subject_id_2 +'" class="widget_panel"><h6 id="description">Pick a date</h6>\
+                    \<div id="'+ subject_id_2 +'" class="widget_panel">\
                     '+ gettime(subject.timing.batch_2, subject.subject_name) +'\
                     </div>\
                     <button class="tablinks '+ subject.subject_name +'" id="'+ subject.subject_name+subject.timing.batch_1[0]+subject.timing.batch_3[1] +'" onclick="showWidgetPanel('+just_subject+','+sub_3+','+sub_2+','+sub_1+',event)"><b>'+ formatcode(subject.timing.batch_3[0]) +'<br><br>'+ subject.timing.batch_3[1] +'</b></button>\
                     </div>\
-                    <div id="'+ subject_id_3 +'" class="widget_panel"> <h6 id="description">Pick a date</h6>\
+                    <div id="'+ subject_id_3 +'" class="widget_panel">\
                     '+ gettime(subject.timing.batch_3, subject.subject_name) +'\
                     </div>\
                     </div>\
